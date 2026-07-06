@@ -73,6 +73,12 @@
     <section class="section" style="padding-top:clamp(2rem,4vw,3rem)">
       <div class="container contact-grid">
         <form class="contact-form reveal" novalidate>
+          <!-- Web3Forms — replace the value below with your own free access key from https://web3forms.com -->
+          <input type="hidden" name="access_key" value="845f133b-0084-4290-9937-6f1626f69f2d" />
+          <input type="hidden" name="subject" value="New message from your portfolio contact form" />
+          <input type="hidden" name="from_name" value="Portfolio — Bayu Alpiansyah" />
+          <!-- Honeypot: real users leave this empty; bots that tick it are rejected -->
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="form-field">
             <label for="f-name" data-i18n="contact.f.name">Your name</label>
             <input id="f-name" type="text" name="name" placeholder="Sarah Jones" data-i18n-ph="contact.f.name.ph" required />

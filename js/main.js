@@ -253,14 +253,50 @@
   /* ---------- Contact form ---------- */
   const form = document.querySelector(".contact-form");
   if (form) {
-    form.addEventListener("submit", (e) => {
+    const toast = document.querySelector(".toast");
+    const showToast = () => {
+      if (!toast) return;
+      toast.classList.add("is-visible");
+      setTimeout(() => toast.classList.remove("is-visible"), 4200);
+    };
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const toast = document.querySelector(".toast");
-      if (toast) {
-        toast.classList.add("is-visible");
-        setTimeout(() => toast.classList.remove("is-visible"), 4200);
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
       }
-      form.reset();
+
+      const btn = form.querySelector('[type="submit"]');
+      const label = btn ? btn.querySelector("span") : null;
+      const original = label ? label.textContent : "";
+      if (btn) btn.disabled = true;
+      if (label) label.textContent = "Sending…";
+
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success) {
+          form.reset();
+          showToast();
+        } else {
+          alert(
+            (data && data.message) ||
+              "Sorry, something went wrong. Please email me directly at bayu.alpiansyah18@gmail.com."
+          );
+        }
+      } catch (err) {
+        alert(
+          "Network error — please email me directly at bayu.alpiansyah18@gmail.com."
+        );
+      } finally {
+        if (btn) btn.disabled = false;
+        if (label) label.textContent = original;
+      }
     });
   }
 
