@@ -12,7 +12,7 @@ Personal portfolio website of **Bayu Alpiansyah**, a Product Designer based in J
 |------|------|-------------|
 | Home | `index.html` | Hero, selected work, stats, services, articles, testimonials |
 | Work | `work.html` | 10 project cards with category filter |
-| Case Study | `project.html` | SATUSEHAT Resep deep-dive |
+| Case Study | `project.html` | Project deep dive |
 | Articles | `articles.html` | Blog articles with search, filter & sort |
 | About | `about.html` | Bio, timeline, certifications, tools |
 | Contact | `contact.html` | Contact form, FAQ accordion |
