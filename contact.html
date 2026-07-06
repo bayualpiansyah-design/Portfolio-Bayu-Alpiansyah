@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Bayu Alpiansyah</title>
+  <meta name="description" content="Get in touch with Bayu Alpiansyah — product design, UX, accessibility audits, and websites." />
+  <script>(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}if(!t)t="dark";document.documentElement.setAttribute("data-theme",t);})();</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%233b5488'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia' font-style='italic'%3Eb%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="contact">
+
+  <div class="page-transition"><span class="pt-mark">bayu.</span></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo magnetic">bayu<span class="dot">.</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="work.html" class="nav-link" data-i18n="nav.work">Work</a>
+        <a href="articles.html" class="nav-link" data-i18n="nav.articles">Articles</a>
+        <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="contact.html" class="nav-link is-active" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-controls">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button data-lang="id">ID</button>
+          <button data-lang="en" class="is-active">EN</button>
+          <button data-lang="ja">JP</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        </button>
+        <a href="mailto:bayu.alpiansyah18@gmail.com" class="btn btn--nav magnetic"><span data-i18n="footer.btn">Email me</span><span class="arrow">→</span></a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html"><small>01</small><span data-i18n="nav.home">Home</span></a>
+    <a href="work.html"><small>02</small><span data-i18n="nav.work">Work</span></a>
+    <a href="articles.html"><small>03</small><span data-i18n="nav.articles">Articles</span></a>
+    <a href="about.html"><small>04</small><span data-i18n="nav.about">About</span></a>
+    <a href="contact.html"><small>05</small><span data-i18n="nav.contact">Contact</span></a>
+  </div>
+
+  <main>
+    <!-- ===== Page hero ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow reveal" data-i18n="contact.eyebrow">Contact</p>
+        <h1 class="display">
+          <span class="line"><span class="li" data-i18n-html="contact.h1.l1">Say <em>hello</em> —</span></span>
+          <span class="line"><span class="li" data-i18n-html="contact.h1.l2">let's build together.</span></span>
+        </h1>
+        <p class="lead reveal" style="--rd:.3s" data-i18n="contact.lead">Tell me a little about your project. I reply to every message within 48 hours — usually faster.</p>
+      </div>
+    </section>
+
+    <!-- ===== Form + aside ===== -->
+    <section class="section" style="padding-top:clamp(2rem,4vw,3rem)">
+      <div class="container contact-grid">
+        <form class="contact-form reveal" novalidate>
+          <div class="form-field">
+            <label for="f-name" data-i18n="contact.f.name">Your name</label>
+            <input id="f-name" type="text" name="name" placeholder="Sarah Jones" data-i18n-ph="contact.f.name.ph" required />
+            <span class="focus-line"></span>
+          </div>
+          <div class="form-field">
+            <label for="f-email" data-i18n="contact.f.email">Email</label>
+            <input id="f-email" type="email" name="email" placeholder="sarah@company.com" data-i18n-ph="contact.f.email.ph" required />
+            <span class="focus-line"></span>
+          </div>
+          <div class="form-field">
+            <label for="f-budget" data-i18n="contact.f.budget">Project budget</label>
+            <select id="f-budget" name="budget">
+              <option data-i18n="contact.f.b1">Under $2k</option>
+              <option selected data-i18n="contact.f.b2">$2k — $5k</option>
+              <option data-i18n="contact.f.b3">$5k — $15k</option>
+              <option data-i18n="contact.f.b4">$15k+</option>
+            </select>
+            <span class="focus-line"></span>
+          </div>
+          <div class="form-field">
+            <label for="f-message" data-i18n="contact.f.msg">About the project</label>
+            <textarea id="f-message" name="message" placeholder="We're building a product that…" data-i18n-ph="contact.f.msg.ph" required></textarea>
+            <span class="focus-line"></span>
+          </div>
+          <button type="submit" class="btn magnetic"><span data-i18n="contact.f.send">Send message</span><span class="arrow">→</span></button>
+        </form>
+
+        <aside class="contact-aside reveal" style="--rd:.15s">
+          <div class="aside-block">
+            <p class="aside-label" data-i18n="contact.a.email">Email</p>
+            <a href="mailto:bayu.alpiansyah18@gmail.com" class="big-link">bayu.alpiansyah18@gmail.com</a>
+          </div>
+          <div class="aside-block">
+            <p class="aside-label" data-i18n="contact.a.phone">Phone / WhatsApp</p>
+            <a href="https://wa.me/6285885800802" target="_blank" rel="noopener" class="big-link">+62 858-8580-0802</a>
+          </div>
+          <div class="aside-block">
+            <p class="aside-label" data-i18n="contact.a.based">Based in</p>
+            <p>Jakarta, Indonesia (GMT+7)<br /><span class="muted" data-i18n="contact.a.remote">Working with teams worldwide</span></p>
+          </div>
+          <div class="aside-block">
+            <p class="aside-label" data-i18n="contact.a.elsewhere">Elsewhere</p>
+            <div class="socials" style="flex-direction:column;gap:.4rem;align-items:flex-start">
+              <a href="https://www.linkedin.com/in/bayu-alpiansyah/" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://medium.com/@bayu.alpiansyah" target="_blank" rel="noopener">Medium ↗</a>
+              <a href="https://bayux.framer.website" target="_blank" rel="noopener">bayux.framer.website ↗</a>
+            </div>
+          </div>
+          <div class="aside-block">
+            <p class="aside-label" data-i18n="contact.a.now">Currently</p>
+            <span class="availability"><span class="pulse"></span><span data-i18n="contact.avail">Open for freelance &amp; collaboration</span></span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" style="padding-top:0;padding-bottom:0">
+      <div class="container" style="max-width:820px">
+        <p class="eyebrow reveal" data-i18n="contact.faq.eyebrow">Common questions</p>
+        <h2 class="h2 reveal" style="margin-bottom:2.5rem" data-i18n-html="contact.faq.h">Before you <em>ask</em>…</h2>
+
+        <div class="faq reveal">
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="contact.q1">What does a typical project look like?</span><span class="fx"></span></button>
+            <div class="faq-a"><div><p data-i18n="contact.a1">Most engagements run 6–14 weeks: a discovery sprint, weekly design cycles with prototypes and testing, then a developer-ready handoff.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="contact.q2">Do you take freelance work alongside your role?</span><span class="fx"></span></button>
+            <div class="faq-a"><div><p data-i18n="contact.a2">Yes — I take a limited number of freelance projects that don't conflict with my current work: mostly websites, mobile apps, and design audits.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="contact.q3">Can you audit our product for accessibility?</span><span class="fx"></span></button>
+            <div class="faq-a"><div><p data-i18n="contact.a3">Absolutely. I trained in digital accessibility (A11y Bootcamp by Suarise) and audit with Stark, WAVE, and manual testing.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="contact.q4">Do you also build websites?</span><span class="fx"></span></button>
+            <div class="faq-a"><div><p data-i18n="contact.a4">Yes — I ship marketing sites end-to-end with Framer or WordPress, like my own site at bayux.framer.website.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast"><span class="check">✓</span><span data-i18n="contact.toast">Thanks! Your message is on its way — I'll reply within 48 hours.</span></div>
+
+  <!-- ===== Mega Footer ===== -->
+  <footer class="mega-footer">
+    <div class="container footer-cta-row">
+      <div>
+        <p class="f-eyebrow reveal" data-i18n="footer.eyebrow">Got a project in mind?</p>
+        <h2 class="f-title reveal" data-i18n-html="footer.title">Let's create something people <em>love</em>.</h2>
+      </div>
+      <a href="mailto:bayu.alpiansyah18@gmail.com" class="btn btn--light magnetic"><span data-i18n="footer.btn">Email me</span><span class="arrow">→</span></a>
+    </div>
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="fm-track"><span>Bayu Alpiansyah&nbsp;✦&nbsp;Product Designer&nbsp;✦&nbsp;</span></div>
+      <div class="fm-track"><span>Bayu Alpiansyah&nbsp;✦&nbsp;Product Designer&nbsp;✦&nbsp;</span></div>
+    </div>
+    <div class="container footer-cols">
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.menu">Menu</p>
+        <a class="f-link" href="index.html"><span class="fl-arrow">→</span><span data-i18n="nav.home">Home</span></a>
+        <a class="f-link" href="work.html"><span class="fl-arrow">→</span><span data-i18n="nav.work">Work</span></a>
+        <a class="f-link" href="articles.html"><span class="fl-arrow">→</span><span data-i18n="nav.articles">Articles</span></a>
+        <a class="f-link" href="about.html"><span class="fl-arrow">→</span><span data-i18n="nav.about">About</span></a>
+        <a class="f-link" href="contact.html"><span class="fl-arrow">→</span><span data-i18n="nav.contact">Contact</span></a>
+      </div>
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.connect">Connect</p>
+        <a class="f-link" href="https://www.linkedin.com/in/bayu-alpiansyah/" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>LinkedIn</span></a>
+        <a class="f-link" href="https://medium.com/@bayu.alpiansyah" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>Medium</span></a>
+        <a class="f-link" href="https://bayux.framer.website" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>Framer Portfolio</span></a>
+        <a class="f-link" href="https://wa.me/6285885800802" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>WhatsApp</span></a>
+      </div>
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.contactl">Contact</p>
+        <a class="f-link" href="mailto:bayu.alpiansyah18@gmail.com"><span class="fl-arrow">→</span><span>bayu.alpiansyah18@gmail.com</span></a>
+        <a class="f-link" href="tel:+6285885800802"><span class="fl-arrow">→</span><span>+62 858-8580-0802</span></a>
+        <p class="f-loc"><span class="live-dot"></span><span data-i18n="footer.loc">Jakarta, Indonesia</span> · <span data-clock>--:--:--</span> WIB</p>
+      </div>
+    </div>
+    <div class="container footer-bottom2">
+      <span>© <span data-year>2026</span> Bayu Alpiansyah · <span data-i18n="footer.rights">Designed &amp; built with care in Jakarta.</span></span>
+      <button class="to-top magnetic" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
