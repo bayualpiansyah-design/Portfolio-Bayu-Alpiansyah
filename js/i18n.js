@@ -649,20 +649,56 @@
     const page = document.body.dataset.page;
     if (page && dict["meta." + page]) document.title = dict["meta." + page];
 
-    document.querySelectorAll(".lang-switch button").forEach((b) => {
+    document.querySelectorAll(".lang-menu button").forEach((b) => {
       b.classList.toggle("is-active", b.dataset.lang === lang);
+    });
+    document.querySelectorAll(".lang-switch").forEach((sw) => {
+      const active = sw.querySelector('.lang-menu button[data-lang="' + lang + '"]');
+      const label = sw.querySelector("[data-lang-label]");
+      if (active && label) label.textContent = active.textContent.trim();
     });
     try { localStorage.setItem("lang", lang); } catch (e) {}
   }
 
-  document.querySelectorAll(".lang-switch button").forEach((b) => {
-    b.addEventListener("click", () => apply(b.dataset.lang));
+  const langSwitches = document.querySelectorAll(".lang-switch");
+
+  function closeLang() {
+    langSwitches.forEach((sw) => {
+      sw.classList.remove("is-open");
+      const t = sw.querySelector(".lang-trigger");
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  langSwitches.forEach((sw) => {
+    const trigger = sw.querySelector(".lang-trigger");
+    if (trigger) {
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const willOpen = !sw.classList.contains("is-open");
+        closeLang();
+        if (willOpen) {
+          sw.classList.add("is-open");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
+    }
+    sw.querySelectorAll(".lang-menu button").forEach((b) => {
+      b.addEventListener("click", () => {
+        apply(b.dataset.lang);
+        closeLang();
+      });
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".lang-switch")) closeLang();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLang();
   });
 
   let saved = "en";
   try { saved = localStorage.getItem("lang") || "en"; } catch (e) {}
-  if (saved !== "en") apply(saved);
-  else document.querySelectorAll(".lang-switch button").forEach((b) => {
-    b.classList.toggle("is-active", b.dataset.lang === "en");
-  });
+  apply(saved);
 })();
