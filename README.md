@@ -1,6 +1,6 @@
 # Portfolio — Bayu Alpiansyah
 
-Personal portfolio website of **Bayu Alpiansyah**, a Product Designer based in Jakarta, Indonesia. Built from scratch with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools.
+Personal portfolio website of **Bayu Alpiansyah**, a Product Designer based in Jakarta, Indonesia. Built from scratch with vanilla HTML, CSS, and JavaScript.
 
 🔗 **Live:** [bayualpiansyah-design.github.io/Portfolio-Bayu-Alpiansyah](https://bayualpiansyah-design.github.io/Portfolio-Bayu-Alpiansyah)
 
