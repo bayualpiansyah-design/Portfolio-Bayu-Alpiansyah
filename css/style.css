@@ -433,7 +433,7 @@ em, .serif {
   left: -10vw; bottom: -6vw;
   background: radial-gradient(circle, rgba(59, 84, 136, 0.18), transparent 65%);
 }
-.hero-inner { position: relative; width: 100%; padding-inline: 32px; }
+.hero-inner { position: relative; }
 .hero .display { max-width: 11em; }
 
 .hero-meta {
