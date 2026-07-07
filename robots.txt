@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add your sitemap once the custom domain is live, e.g.:
-# Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://heybayu.com/sitemap.xml
