@@ -67,6 +67,7 @@
     <a href="articles.html"><small>03</small><span data-i18n="nav.articles">Articles</span></a>
     <a href="about.html"><small>04</small><span data-i18n="nav.about">About</span></a>
     <a href="contact.html"><small>05</small><span data-i18n="nav.contact">Contact</span></a>
+    <button type="button" class="mobile-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
 
   <main>
@@ -77,13 +78,14 @@
       <div class="container hero-inner">
         <p class="eyebrow reveal" data-i18n="home.eyebrow">Product Designer — Jakarta, ID</p>
         <h1 class="display">
-          <span class="line"><span class="li" data-i18n-html="home.h1.l1">Designing calm,</span></span>
-          <span class="line"><span class="li" data-i18n-html="home.h1.l2">useful products</span></span>
-          <span class="line"><span class="li" data-i18n-html="home.h1.l3">people <em>love</em> to use.</span></span>
+          <span class="line"><span class="li" data-i18n-html="home.h1.l1">I build experiences that</span></span>
+          <span class="line"><span class="li" data-i18n-html="home.h1.l2"><em>solve business problems</em> and</span></span>
+          <span class="line"><span class="li" data-i18n-html="home.h1.l3">delivering <em>impactful products</em></span></span>
+          <span class="line"><span class="li" data-i18n-html="home.h1.l4">for society.</span></span>
         </h1>
         <div class="hero-meta reveal" style="--rd:.35s">
           <span class="availability"><span class="pulse"></span><span data-i18n="home.avail">Available for new projects</span></span>
-          <p class="lead" style="max-width:28em" data-i18n="home.lead">3+ years designing digital healthcare used by millions — from national health apps to pharmacy platforms.</p>
+          <p class="lead" style="max-width:30em" data-i18n="home.lead">5 years designing products across healthcare, ERP, and SaaS — turning complex business flows into clear, effective solutions.</p>
         </div>
       </div>
       <div class="scroll-hint">
@@ -186,14 +188,6 @@
       </div>
     </section>
 
-    <!-- ===== Stats ===== -->
-    <section class="stats reveal">
-      <div class="stat"><div class="num"><span data-count="3">0</span><sup>+</sup></div><div class="label" data-i18n="home.stat1">Years in product design</div></div>
-      <div class="stat"><div class="num"><span data-count="5">0</span></div><div class="label" data-i18n="home.stat2">Products designed</div></div>
-      <div class="stat"><div class="num"><span data-count="8000">0</span><sup>+</sup></div><div class="label" data-i18n="home.stat3">Pharmacies enabled</div></div>
-      <div class="stat"><div class="num"><span data-count="1">0</span><sup>M+</sup></div><div class="label" data-i18n="home.stat4">Users served</div></div>
-    </section>
-
     <!-- ===== Services ===== -->
     <section class="section">
       <div class="container">
@@ -211,7 +205,7 @@
             <span class="num">01</span>
             <div>
               <h3 data-i18n="home.s1.t">UX Research &amp; Strategy</h3>
-              <p data-i18n="home.s1.d">Interviews, usability testing, and journey mapping — understanding pharmacists, patients, and users before drawing a single screen.</p>
+              <p data-i18n="home.s1.d">Interviews, usability testing, and journey mapping — understanding users and their context before drawing a single screen.</p>
             </div>
             <span class="s-arrow">→</span>
           </div>
@@ -219,7 +213,7 @@
             <span class="num">02</span>
             <div>
               <h3 data-i18n="home.s2.t">Product &amp; Interaction Design</h3>
-              <p data-i18n="home.s2.d">End-to-end flows, wireframes, and polished UI for web and mobile — from government-scale systems to landing pages.</p>
+              <p data-i18n="home.s2.d">End-to-end flows, wireframes, and polished UI for web and mobile — turning complex business flows into effective solutions across industries.</p>
             </div>
             <span class="s-arrow">→</span>
           </div>
@@ -235,10 +229,40 @@
             <span class="num">04</span>
             <div>
               <h3 data-i18n="home.s4.t">Data Visualization</h3>
-              <p data-i18n="home.s4.d">Turning dense health data into dashboards and charts people actually read — clarity over decoration.</p>
+              <p data-i18n="home.s4.d">Turning dense, complex data into dashboards and charts people actually read — clarity over decoration.</p>
             </div>
             <span class="s-arrow">→</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stacks & Tools ===== -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal" data-i18n="home.tools.eyebrow">Stacks &amp; Tools</p>
+            <h2 class="h2">
+              <span class="line"><span class="li" data-i18n-html="home.tools.l1">The kit behind</span></span>
+              <span class="line"><span class="li" data-i18n-html="home.tools.l2">the <em>work</em>.</span></span>
+            </h2>
+          </div>
+        </div>
+        <div class="tools-grid">
+          <a class="tool-card reveal" href="https://www.figma.com" target="_blank" rel="noopener"><span class="tool-name">Figma</span><span class="tool-cat">General Design</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://www.framer.com" target="_blank" rel="noopener"><span class="tool-name">Framer</span><span class="tool-cat">Web Design</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener"><span class="tool-name">Jira</span><span class="tool-cat">Project Management</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://slack.com" target="_blank" rel="noopener"><span class="tool-name">Slack</span><span class="tool-cat">Collaboration</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://maze.co" target="_blank" rel="noopener"><span class="tool-name">Maze</span><span class="tool-cat">UX Research</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://chatgpt.com" target="_blank" rel="noopener"><span class="tool-name">ChatGPT</span><span class="tool-cat">Content &amp; Copy Generation</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://www.getstark.co" target="_blank" rel="noopener"><span class="tool-name">Stark</span><span class="tool-cat">Accessibility Audit</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://www.capcut.com" target="_blank" rel="noopener"><span class="tool-name">CapCut</span><span class="tool-cat">Video Editing</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://mail.google.com" target="_blank" rel="noopener"><span class="tool-name">Gmail</span><span class="tool-cat">Email &amp; Communication</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://docs.google.com" target="_blank" rel="noopener"><span class="tool-name">Google Docs</span><span class="tool-cat">Document Editing</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://sheets.google.com" target="_blank" rel="noopener"><span class="tool-name">Google Sheets</span><span class="tool-cat">Visualize &amp; Analyze Data</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://slides.google.com" target="_blank" rel="noopener"><span class="tool-name">Google Slides</span><span class="tool-cat">Presentation</span><span class="tool-arrow">↗</span></a>
+          <a class="tool-card reveal" href="https://claude.com/claude-code" target="_blank" rel="noopener"><span class="tool-name">Claude Code</span><span class="tool-cat">Deployment &amp; Coding</span><span class="tool-arrow">↗</span></a>
         </div>
       </div>
     </section>
@@ -375,8 +399,8 @@
   <footer class="mega-footer">
     <div class="container footer-cta-row">
       <div>
-        <p class="f-eyebrow reveal" data-i18n="footer.eyebrow">Got a project in mind?</p>
-        <h2 class="f-title reveal" data-i18n-html="footer.title">Let's create something people <em>love</em>.</h2>
+        <p class="f-eyebrow reveal" data-i18n="footer.eyebrow">Have a project or a role in mind?</p>
+        <h2 class="f-title reveal" data-i18n-html="footer.title">Let's <em>collaborate</em> — freelance or full-time.</h2>
       </div>
       <a href="mailto:bayu.alpiansyah18@gmail.com" class="btn btn--light magnetic"><span data-i18n="footer.btn">Email me</span><span class="arrow">→</span></a>
     </div>
@@ -397,7 +421,7 @@
         <p class="f-label" data-i18n="footer.connect">Connect</p>
         <a class="f-link" href="https://www.linkedin.com/in/bayu-alpiansyah/" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>LinkedIn</span></a>
         <a class="f-link" href="https://medium.com/@bayu.alpiansyah" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>Medium</span></a>
-        <a class="f-link" href="https://bayux.framer.website" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>Framer Portfolio</span></a>
+        <a class="f-link" href="https://www.youtube.com/@bayuxdesign" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>YouTube</span></a>
         <a class="f-link" href="https://wa.me/6285885800802" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>WhatsApp</span></a>
       </div>
       <div class="f-col">

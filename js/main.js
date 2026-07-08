@@ -60,12 +60,20 @@
   const toggle = document.querySelector(".menu-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
   if (toggle && mobileMenu) {
-    toggle.addEventListener("click", () => {
-      const open = mobileMenu.classList.toggle("is-open");
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle("is-open", open);
       toggle.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open);
       document.body.style.overflow = open ? "hidden" : "";
-    });
+    };
+    toggle.addEventListener("click", () =>
+      setMenu(!mobileMenu.classList.contains("is-open"))
+    );
+    const closeBtn = mobileMenu.querySelector(".mobile-close");
+    if (closeBtn) closeBtn.addEventListener("click", () => setMenu(false));
+    mobileMenu.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => setMenu(false))
+    );
   }
 
   /* ---------- Reveal on scroll ---------- */
