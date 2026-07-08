@@ -1693,12 +1693,20 @@ a:hover .ui-badge .seal, .cover:hover .ui-badge .seal { transform: rotate(360deg
 
 /* Media figures: images / gifs / video with captions */
 .media-figure { margin-block: clamp(2rem, 4.5vw, 3.5rem); }
-.media-figure img,
-.media-figure video {
+.media-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--line), 0 30px 60px -35px rgba(22, 34, 60, 0.35);
+}
+.media-frame img,
+.media-frame video {
   width: 100%;
   display: block;
-  border-radius: var(--radius);
-  box-shadow: inset 0 0 0 1px var(--line), 0 30px 60px -35px rgba(22, 34, 60, 0.35);
+  transition: transform 0.7s var(--ease);
+}
+.media-frame:hover img,
+.media-frame:hover video {
+  transform: scale(1.06);
 }
 .media-figure figcaption {
   margin-top: 0.9rem;
@@ -1733,7 +1741,8 @@ a:hover .ui-badge .seal, .cover:hover .ui-badge .seal { transform: rotate(360deg
   box-shadow: inset 0 0 0 1px var(--line), 0 30px 60px -35px rgba(22, 34, 60, 0.35);
   cursor: pointer;
 }
-.video-embed video { width: 100%; height: 100%; display: block; object-fit: cover; }
+.video-embed video { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.7s var(--ease); }
+.video-embed:hover video { transform: scale(1.06); }
 .video-embed .ve-play {
   position: absolute;
   inset: 0;
