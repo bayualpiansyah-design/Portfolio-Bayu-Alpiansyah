@@ -1,0 +1,22 @@
+{
+  "name": "Bayu Alpiansyah — Product Designer",
+  "short_name": "Bayu Alpiansyah",
+  "description": "5 years designing digital products across SaaS, ERP, Mobile, and Healthcare.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1218",
+  "theme_color": "#3b5488",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo.svg",
+      "sizes": "164x164",
+      "type": "image/svg+xml"
+    }
+  ]
+}
