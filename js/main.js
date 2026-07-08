@@ -23,6 +23,12 @@
   });
   requestAnimationFrame(playEnter);
 
+  // Disabled "coming soon" cards — swallow the click, go nowhere
+  document.addEventListener("click", (e) => {
+    const soon = e.target.closest('a[aria-disabled="true"]');
+    if (soon) e.preventDefault();
+  });
+
   // Intercept internal links for exit animation
   document.addEventListener("click", (e) => {
     const link = e.target.closest("a[href]");
@@ -162,6 +168,7 @@
   /* ---------- Subtle tilt on covers ---------- */
   if (finePointer && !reduceMotion) {
     document.querySelectorAll(".tilt").forEach((el) => {
+      if (el.closest(".is-soon")) return;
       el.addEventListener("mousemove", (e) => {
         const r = el.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5;
@@ -246,6 +253,42 @@
       });
     });
     applySort();
+  }
+
+  /* ---------- Case study: click-to-load video embeds ---------- */
+  document.querySelectorAll(".video-embed[data-src]").forEach((wrap) => {
+    wrap.addEventListener("click", () => {
+      if (wrap.classList.contains("is-playing")) return;
+      const video = document.createElement("video");
+      video.src = wrap.dataset.src;
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      wrap.appendChild(video);
+      wrap.classList.add("is-playing");
+    });
+  });
+
+  /* ---------- Case study: table-of-contents scroll-spy ---------- */
+  const tocLinks = document.querySelectorAll(".case-toc a[href^='#']");
+  if (tocLinks.length) {
+    const sections = [...tocLinks]
+      .map((a) => document.getElementById(a.getAttribute("href").slice(1)))
+      .filter(Boolean);
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const link = document.querySelector(`.case-toc a[href="#${entry.target.id}"]`);
+          if (!link) return;
+          if (entry.isIntersecting) {
+            tocLinks.forEach((l) => l.classList.remove("is-active"));
+            link.classList.add("is-active");
+          }
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => spy.observe(s));
   }
 
   /* ---------- FAQ accordion ---------- */

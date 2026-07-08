@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SATUSEHAT Resep — Closing Indonesia's Pharmacy Data Gap — Bayu Alpiansyah</title>
+  <meta name="description" content="Case study: designing a digital prescription portal that connects 8,000+ independent pharmacies to Indonesia's national SATUSEHAT health data ecosystem." />
+  <link rel="canonical" href="https://heybayu.com/project-satusehat-resep" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Bayu Alpiansyah" />
+  <meta property="og:title" content="SATUSEHAT Resep — Closing Indonesia's Pharmacy Data Gap" />
+  <meta property="og:description" content="Case study: designing a digital prescription portal that connects 8,000+ independent pharmacies to Indonesia's national SATUSEHAT health data ecosystem." />
+  <meta property="og:url" content="https://heybayu.com/project-satusehat-resep" />
+  <meta property="og:image" content="https://heybayu.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SATUSEHAT Resep — Closing Indonesia's Pharmacy Data Gap" />
+  <meta name="twitter:description" content="Case study: designing a digital prescription portal that connects 8,000+ independent pharmacies to Indonesia's national SATUSEHAT health data ecosystem." />
+  <meta name="twitter:image" content="https://heybayu.com/assets/og-image.png" />
+  <script>(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}if(!t)t="dark";document.documentElement.setAttribute("data-theme",t);})();</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="project">
+
+  <div class="page-transition"><span class="pt-mark">bayu.</span></div>
+  <div class="progress-bar"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo magnetic" aria-label="Bayu Alpiansyah — Home"><img src="assets/logo.svg" alt="Bayu Alpiansyah" class="logo-mark" width="34" height="34" /></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="work.html" class="nav-link is-active" data-i18n="nav.work">Work</a>
+        <a href="articles.html" class="nav-link" data-i18n="nav.articles">Articles</a>
+        <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-controls">
+        <div class="lang-switch">
+          <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+            <span data-lang-label>EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <div class="lang-menu" role="listbox">
+            <button type="button" role="option" data-lang="id">ID</button>
+            <button type="button" role="option" data-lang="en" class="is-active">EN</button>
+            <button type="button" role="option" data-lang="ja">JP</button>
+          </div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn--nav magnetic"><span data-i18n="nav.cta">Let's talk</span><span class="arrow">→</span></a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html"><small>01</small><span data-i18n="nav.home">Home</span></a>
+    <a href="work.html"><small>02</small><span data-i18n="nav.work">Work</span></a>
+    <a href="articles.html"><small>03</small><span data-i18n="nav.articles">Articles</span></a>
+    <a href="about.html"><small>04</small><span data-i18n="nav.about">About</span></a>
+    <a href="contact.html"><small>05</small><span data-i18n="nav.contact">Contact</span></a>
+    <button type="button" class="mobile-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+
+  <main>
+    <!-- ===== Case hero ===== -->
+    <section class="page-hero" style="padding-bottom:0">
+      <div class="container">
+        <p class="eyebrow reveal">Case Study — Digital Health</p>
+        <h1 class="display">
+          <span class="line"><span class="li">SATUSEHAT Resep:</span></span>
+          <span class="line"><span class="li">closing the <em>data gap</em></span></span>
+          <span class="line"><span class="li">in Indonesia's pharmacy network.</span></span>
+        </h1>
+
+        <p class="case-lede reveal" style="--rd:.2s">"When a patient walks out of a pharmacy, their medication should follow them — not disappear into a paper trail that no one can trace."</p>
+
+        <div class="case-meta reveal">
+          <div><div class="label">Role</div><div class="value">Product Designer</div></div>
+          <div><div class="label">Team</div><div class="value">1 UX Researcher · 1 PM · Dev team</div></div>
+          <div><div class="label">Platform</div><div class="value">Web portal (desktop-first)</div></div>
+          <div><div class="label">Context</div><div class="value">Ministry of Health Indonesia — SATUSEHAT</div></div>
+          <div><div class="label">Scope</div><div class="value">Research, wireframes, MVP prototype</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Hero media ===== -->
+    <section class="case-hero-media">
+      <div class="container">
+        <figure class="media-figure reveal" style="margin:0">
+          <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/hero-main-screen.webp" alt="Main dashboard screen of SATUSEHAT Resep, the digital prescription portal pharmacists see after logging in" loading="eager" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Long-form content with sticky TOC ===== -->
+    <section class="section">
+      <div class="container case-layout">
+        <aside class="case-toc" aria-label="Table of contents">
+          <p class="case-toc-label">On this page</p>
+          <nav>
+            <a href="#scene">The Scene</a>
+            <a href="#problem">The Real Problem</a>
+            <a href="#role">My Role</a>
+            <a href="#research">Research</a>
+            <a href="#product">The Product</a>
+            <a href="#messy-middle">Stakeholders &amp; Scope</a>
+            <a href="#testing">Testing It</a>
+            <a href="#outcome">What Came Out of It</a>
+            <a href="#retrospective">Starting Over</a>
+          </nav>
+        </aside>
+
+        <div class="case-content">
+
+          <!-- Scene -->
+          <section id="scene">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>The Scene Before This Product Existed</h2>
+                <p>Picture a pharmacist at a community pharmacy in South Jakarta. A patient walks in and hands over a piece of paper — a handwritten prescription from their doctor, folded and softened from being carried in a wallet for two days. The pharmacist squints at the handwriting, works out the drug name, pulls the medication from the shelf, and dispenses it. Transaction complete.</p>
+                <p>Except that "complete" is a generous word for what actually happened. No record of this transaction existed outside that pharmacy's own logbook, if they even kept one. The patient's doctor at another clinic wouldn't know what had been dispensed. The Ministry of Health had no visibility into it. And if the patient came back the following week and claimed they never received the medication — or received the wrong one — there was no reliable way to verify anything.</p>
+                <p>Multiply this across more than <strong>47,000 pharmaceutical distribution points</strong> spread across Indonesia's 17,000 islands, and you start to understand the scale of the problem this project was trying to solve.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Problem -->
+          <section id="problem">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>The Real Problem</h2>
+                <p>Indonesia's national health platform, SATUSEHAT (<em>Satu</em> = one, <em>Sehat</em> = healthy), was built to be the single source of truth for patient health data across the country. Hospitals, community health centers (Puskesmas), and clinics were all being integrated into this ecosystem. But there was a blind spot: <strong>independent pharmacies</strong>.</p>
+                <p>When a patient received a prescription from a doctor and filled it at a hospital pharmacy, that dispensing data was captured in SATUSEHAT. When they filled the same prescription at a standalone community pharmacy — which is where a large portion of the population actually gets their medication — it wasn't. The patient's health record in SATUSEHAT was, in those cases, missing a whole chapter.</p>
+              </div>
+            </div>
+
+            <div class="container problem-diagram">
+              <div class="diagram-flow is-captured reveal">
+                <p class="df-label">Data captured</p>
+                <ol>
+                  <li>Patient</li>
+                  <li>Doctor</li>
+                  <li>Hospital pharmacy</li>
+                  <li>SATUSEHAT</li>
+                </ol>
+              </div>
+              <div class="diagram-flow is-gap reveal" style="--rd:.1s">
+                <p class="df-label">Data lost</p>
+                <ol>
+                  <li>Patient</li>
+                  <li>Doctor</li>
+                  <li>Community pharmacy</li>
+                  <li>No connection</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <p>This created two compounding problems that couldn't be ignored:</p>
+                <p><strong>For patients:</strong> Their medication history was incomplete. A doctor at a different facility could prescribe something without knowing what the patient was already taking, raising the risk of interactions and duplications.</p>
+                <p><strong>For the Ministry of Health:</strong> Without dispensing data from pharmacies outside the hospital system, accurate monitoring of national drug distribution was effectively impossible. Strategic decisions about medicine availability, stockpile needs, and controlled substance oversight were being made with gaps in the data.</p>
+                <p>The physical prescription paper itself added its own layer of fragility. It could be lost. It could be damaged. It could be misread. And when it was, the consequences landed entirely on the pharmacist and the patient.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- My Role -->
+          <section id="role">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>My Role in This</h2>
+                <p>This project sat at the intersection of a government mandate and a genuine operational gap. Our company was commissioned to design a portal that would allow pharmacies to record and submit dispensing data directly into the SATUSEHAT ecosystem.</p>
+                <p>As the Product Designer on this project, my work covered two main areas:</p>
+                <p><strong>Research</strong> — Working alongside our UX Researcher, I helped understand the day-to-day workflows of pharmacists and pharmacy staff: how they currently handled prescriptions, where friction and errors crept in, and what they actually needed from a tool like this in order to change their workflow.</p>
+                <p><strong>Design</strong> — Translating those findings into wireframes and an interactive prototype for the MVP. This meant making calls about which features belonged in the first release and what each one should actually look and feel like.</p>
+                <p>In practice, I also found myself doing a third thing that doesn't show up in a job title: acting as a filter between a large, opinionated group of stakeholders and a product that needed to stay focused and usable. More on that later.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Research -->
+          <section id="research">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>Getting to Know the People Behind the Counter</h2>
+                <p>Before any sketching happened, we made a deliberate choice about our research process: because this product was built exclusively for licensed pharmacy personnel, we would only research and test with pharmacists and pharmacy staff. No stand-ins.</p>
+                <p>That decision took more effort — scheduling interviews with pharmacists means working around their shifts, which aren't nine-to-five — but it kept us honest about what we were actually designing for.</p>
+                <p>A few things we learned that shaped everything that followed:</p>
+                <p><strong>Pharmacy staff work in a hierarchy, not a flat team.</strong> Every pharmacy has a licensed <em>Apoteker Penanggung Jawab</em> (Pharmacist-in-Charge) who holds professional and legal accountability for what's dispensed. Under them are assistants and administrative staff who handle much of the day-to-day work. Any digital tool that didn't reflect this division of responsibility would either create security vulnerabilities or put administrative burden in the wrong place.</p>
+                <p><strong>The prescription paper functions as a working document, not just documentation.</strong> Pharmacists don't read a prescription once and put it away. They glance at it while counting pills, refer to it while labeling, check it again before handing medication over. The paper lives in their hands throughout the process. A digital replacement needed to work the same way — always visible, easy to reference without navigating away.</p>
+                <p><strong>First impressions carry weight.</strong> Pharmacists are professional users who expect tools to work reliably. A product that crashed, loaded slowly, or made them question whether their data was actually being submitted correctly would lose their trust quickly and get abandoned.</p>
+              </div>
+            </div>
+
+            <div class="container media-row">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/research-user-flow.webp" alt="User flow diagram mapping how pharmacists handle drug prescriptions" loading="lazy" />
+                <figcaption>Mapping the end-to-end prescription flow across pharmacy types.</figcaption>
+              </figure>
+              <figure class="media-figure reveal" style="--rd:.1s">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/research-api-integration.webp" alt="Diagram of pharmacy system integration with the SATUSEHAT API" loading="lazy" />
+                <figcaption>How individual pharmacy systems integrate with SATUSEHAT's API.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- The Product -->
+          <section id="product">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>The Product We Built</h2>
+                <p>The MVP covered seven core areas. Rather than walk through them as a feature list, I want to explain the reasoning behind each — because most of the interesting design work happened in the <em>why</em>, not the <em>what</em>.</p>
+              </div>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>Getting In: Login That's Secure Without Being Hostile</h3>
+                <p>We couldn't use a standard username-and-password setup. Pharmacists dispensing controlled medications through a national health system needed to be verified professionals, not just registered email addresses.</p>
+                <p>The solution was to tie registration and login to <strong>SATUSEHAT SDMK</strong>, the Ministry's professional credentials portal for health workers. Only staff who had verified their pharmacy license there could access this portal. Once inside, they'd also select which health facility they were currently working at — because data accuracy required knowing where each dispensing transaction actually happened.</p>
+                <p>This created a more complex onboarding than users were used to. We knew that. We'll come back to it.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/login-auth-flow.gif" alt="Animated walkthrough of the SDMK professional portal verification flow" loading="lazy" />
+                <figcaption>Registration and login tied to SATUSEHAT SDMK, the Ministry's professional credentials portal.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>Who Can Do What: Role-Based Access Control</h3>
+                <p>The pharmacist-in-charge needed meaningful control over their team's access. We built a management panel where they could add staff members, assign appropriate access levels, and revoke access when needed — for example, when a staff member left.</p>
+                <p>This wasn't just bureaucratic housekeeping. In a setting where every dispensing record becomes part of a patient's national health history, accountability matters. Knowing exactly who submitted what, and ensuring only qualified staff could submit certain types of records, was a functional safety requirement.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/user-management.gif" alt="Animated walkthrough of the pharmacist-in-charge managing staff access levels" loading="lazy" />
+                <figcaption>The pharmacist-in-charge's view for granting and revoking staff access.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>Finding the Prescription: Number or QR Code</h3>
+                <p>This feature replaced the paper prescription as the entry point for the entire dispensing workflow.</p>
+                <p>After every doctor's visit, patients receive a <strong>National Prescription Number (Nomor Resep Nasional)</strong> in their SATUSEHAT Mobile app. At the pharmacy, they either read out the number or show the QR code from their phone. The pharmacist enters the number or scans the code — and the full prescription appears, pulled directly from SATUSEHAT. No paper needed.</p>
+                <p>The QR option was particularly important. It meant patients didn't need to remember or write down anything. The prescription lived in their phone, couldn't be lost, and couldn't be damaged. For patients who regularly dealt with chronic illness prescriptions or multiple medications, this was a genuine quality-of-life improvement.</p>
+              </div>
+            </div>
+            <div class="container media-row">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/prescription-number-lookup.gif" alt="Animated walkthrough of entering a National Prescription Number to look up a prescription" loading="lazy" />
+                <figcaption>Looking up a prescription by its National Prescription Number.</figcaption>
+              </figure>
+              <figure class="media-figure reveal" style="--rd:.1s">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/qr-code-lookup.gif" alt="Animated walkthrough of scanning a patient's QR code to look up a prescription" loading="lazy" />
+                <figcaption>Or scanning the QR code straight from the patient's phone.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>The Prescription View: Everything the Pharmacist Needs, In One Place</h3>
+                <p>We structured this screen the same way a pharmacist reads a prescription: patient and administrative information at the top (name, date, prescribing doctor), then a table of medications below.</p>
+                <p>For each drug, the table showed: the drug name, the prescribed quantity, the number of <em>iters</em> (how many times the prescription can be refilled), and the remaining doses still available if the patient had refilled before.</p>
+                <p>Pharmacists could expand any row to reveal additional clinical details: dosage timing, drug formulation, and any special instructions the doctor had noted. This mirrored how they already used the physical prescription paper — something to dip into for specific information while handling the medication, not a document that demanded full attention.</p>
+              </div>
+            </div>
+            <div class="container media-row">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/prescription-detail-1.webp" alt="Prescription detail screen showing patient information and a table of prescribed medications" loading="lazy" />
+              </figure>
+              <figure class="media-figure reveal" style="--rd:.1s">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/prescription-detail-2.webp" alt="Prescription detail screen with an expanded medication row showing dosage and formulation details" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>Redemption History: Know What Came Before</h3>
+                <p>Before handing over medication, a pharmacist benefits from knowing what the patient has already picked up. Has the first refill already been dispensed elsewhere? Were they given a different formulation last time?</p>
+                <p>The redemption history panel surfaced exactly this context — a log of all previous dispensing events tied to the current prescription. This supported pharmaceutical review: the professional act of a pharmacist checking the full medication picture before proceeding. It transformed the portal from a transaction tool into something closer to a clinical decision aid.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/redemption-history.webp" alt="Redemption history panel showing a timeline of previous dispensing events for a prescription" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>The Dispensing Itself: Structured, Flexible, Accountable</h3>
+                <p>The redemption flow was where the most interaction design work happened.</p>
+                <p>Pharmacists press "Redeem" for each drug on the prescription. If a drug has already been fully dispensed, the button becomes inactive — a simple but important guardrail against accidental double-dispensing. Within the redemption form, they can choose to dispense exactly as prescribed or select a substitute drug (a standard practice when the prescribed brand isn't in stock).</p>
+                <p>The drug search field queries a <strong>standardized national drug database</strong> maintained by the Ministry of Health. This was a deliberate design decision with strategic implications: every drug that can be selected through this portal is one that the government officially recognizes. At national scale, this means SATUSEHAT Resep becomes not just a dispensing tool but a real-time data source for monitoring which medications are actually being distributed across the country — and in what quantities.</p>
+                <p>A reference panel on the right side of the screen kept the prescribing doctor's original instructions visible while the pharmacist was filling in the dispensing form, directly replacing the function that the physical prescription paper served.</p>
+              </div>
+            </div>
+            <div class="container media-row">
+              <figure class="media-figure reveal">
+                <div class="video-embed" data-src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/drug-redemption-flow.mp4">
+                  <div class="ve-play">
+                    <span class="ve-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                    <span class="ve-label">Watch: Drug redemption flow</span>
+                  </div>
+                </div>
+                <figcaption>Redeeming a drug — dispense as prescribed, or select a substitute.</figcaption>
+              </figure>
+              <figure class="media-figure reveal" style="--rd:.1s">
+                <div class="video-embed" data-src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/drug-mapping-search.mp4">
+                  <div class="ve-play">
+                    <span class="ve-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                    <span class="ve-label">Watch: Drug search &amp; mapping</span>
+                  </div>
+                </div>
+                <figcaption>Searching the standardized national drug database.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>Sending It to SATUSEHAT: The Moment It All Connects</h3>
+                <p>After all medications have been entered, the pharmacist submits the record to SATUSEHAT. A confirmation screen appears first, showing everything about to be sent — a final check before any record becomes permanent.</p>
+                <p>Once submitted, the data is live in the SATUSEHAT ecosystem. The patient's SATUSEHAT Mobile app is updated with their new dispensing record. They can open their phone and see exactly what they received, when they received it, and from where.</p>
+                <p>That moment — a patient's phone reflecting a complete medication history — was the end state we were designing toward. Not just "data saved to a database." A patient who actually knows what they've taken.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="video-embed" data-src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/submission-flow.mp4">
+                  <div class="ve-play">
+                    <span class="ve-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                    <span class="ve-label">Watch: Submitting to SATUSEHAT</span>
+                  </div>
+                </div>
+                <figcaption>Reviewing and submitting the completed dispensing record.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- Messy Middle -->
+          <section id="messy-middle">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>The Messy Middle: Stakeholders, Scope, and What Got Cut</h2>
+                <p>No product that touches government policy moves in a straight line. This one didn't either.</p>
+                <p>Throughout the design process, input came from a wide range of stakeholders — ministry officials, policy teams, pharmacy industry representatives — each with a different idea of what this product should prioritize. The ideas were often legitimate. The challenge was that they frequently conflicted with each other, with the timeline, and sometimes with what actual pharmacists needed.</p>
+                <p>The PM and I developed a working approach to manage this: every incoming request got assessed on two dimensions — <strong>urgency</strong> (does this meaningfully affect what users can do right now?) and <strong>effort</strong> (how much development capacity does this require?). High urgency and feasible effort went into the current sprint. Low urgency or high effort got documented, communicated to stakeholders with a clear rationale, and deferred to a post-launch iteration.</p>
+                <p>The key to making this work in practice was framing. Rather than saying "we can't do this," we learned to say: "We don't have user data to support this prioritization yet — let's validate what we have in the first release and then add this with evidence behind it." Most stakeholders respond to that framing. Design decisions feel less like personal opinions when they're grounded in a process.</p>
+                <p>There were moments of friction. There were requests we declined and had to defend more than once. That's a normal part of building products inside institutions with multiple competing interests. What mattered was keeping the actual users — pharmacists at their counters, handling medications — at the center of every conversation.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/iteration-process.webp" alt="Working document showing feedback, revisions, and enhancements made based on stakeholder input" loading="lazy" />
+                <figcaption>Tracking stakeholder feedback and the revisions it led to.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- Testing -->
+          <section id="testing">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>Testing It in the Real World</h2>
+                <p>Before any broader rollout, we piloted the product at several hospitals and pharmacies in the Jakarta area. The goal was to catch real problems in a manageable context — not to validate that everything was perfect.</p>
+                <p>A few things stood out from that process.</p>
+              </div>
+            </div>
+
+            <div class="container finding-grid">
+              <div class="finding-card is-good reveal">
+                <p class="fc-label">What worked well</p>
+                <p>The majority of pharmacists and pharmacy staff who participated in the pilot completed their assigned tasks successfully and independently. The core dispensing flow — finding a prescription, reviewing it, redeeming medications, submitting the record — held up. Most users said they understood the product fairly quickly once they were inside it.</p>
+              </div>
+              <div class="finding-card is-friction reveal" style="--rd:.1s">
+                <p class="fc-label">The expected friction</p>
+                <p>Network reliability was a recurring issue. The portal connects to a large national health database, and on weak or unstable connections, the experience degraded noticeably. This wasn't a design failure, but it was a real user experience problem — designing for Indonesia means accounting for connectivity that isn't always ideal.</p>
+              </div>
+              <div class="finding-card is-insight reveal" style="--rd:.2s">
+                <p class="fc-label">The insight we weren't prepared for</p>
+                <p>The biggest source of confusion wasn't any feature inside the portal — it was getting into the portal. The SDMK-based authentication flow was disorienting for people used to just entering an email and a password. We still believe the security requirement was correct; the pilot showed the experience of completing that step needed more support.</p>
+              </div>
+            </div>
+
+            <div class="container">
+              <figure class="media-figure reveal">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/pilot-testing.webp" alt="Pilot testing session at RS Jantung dan Pembuluh Darah Harapan Kita hospital" loading="lazy" />
+                <figcaption>Piloting at RS Jantung dan Pembuluh Darah Harapan Kita, Jakarta.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- Outcome -->
+          <section id="outcome">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>What Came Out of It</h2>
+                <p>The final design went to development and into the initial pilot rollout. The product addressed the core gap it was built to close: dispensing records from pharmacies that previously had no connection to SATUSEHAT could now be captured, standardized, and fed into the national health data ecosystem.</p>
+              </div>
+            </div>
+
+            <div class="container media-grid-4">
+              <figure class="media-figure reveal" style="margin-block:0">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/final-screen-1.webp" alt="Final SATUSEHAT Resep screen, enhancement 1" loading="lazy" />
+              </figure>
+              <figure class="media-figure reveal" style="margin-block:0;--rd:.05s">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/final-screen-2.webp" alt="Final SATUSEHAT Resep screen, enhancement 2" loading="lazy" />
+              </figure>
+              <figure class="media-figure reveal" style="margin-block:0;--rd:.1s">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/final-screen-3.webp" alt="Final SATUSEHAT Resep screen, enhancement 3" loading="lazy" />
+              </figure>
+              <figure class="media-figure reveal" style="margin-block:0;--rd:.15s">
+                <img src="https://cdn.jsdelivr.net/gh/bayualpiansyah-design/Portfolio-Bayu-Alpiansyah@main/assets/case-studies/satusehat-resep/final-screen-4.webp" alt="Final SATUSEHAT Resep screen, enhancement 4" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="prose" style="margin-top:clamp(2rem,4vw,3rem)">
+              <div class="prose-block reveal">
+                <p><strong>From the pilot, key takeaways included:</strong></p>
+                <p>Most participating pharmacists completed core dispensing tasks independently on first use, without needing to be guided through the flow. The standardized drug database search reduced ambiguity in drug selection compared to paper-based processes — pharmacists were selecting from a verified, government-approved list rather than hand-interpreting a doctor's shorthand. The primary opportunity for improvement was the onboarding experience: the SDMK verification step needed better in-context guidance to reduce confusion for first-time users.</p>
+                <p>At the broader level, this product contributed to a national initiative where the stakes were genuinely high. SATUSEHAT's goal of integrating data from health facilities across Indonesia — with pharmacies as a newly connected node — wasn't just a technical milestone. More complete medication records mean fewer preventable errors, more accurate prescribing, and better oversight of drug distribution across a country of 270 million people.</p>
+                <p>Research consistently shows that transitioning from paper-based to digital prescription systems can reduce medication errors by 30 to 84%. SATUSEHAT Resep was designed to make that transition possible for the pharmacy sector — and to ensure that every dispensed medication left a trail that actually mattered.</p>
+              </div>
+            </div>
+
+            <div class="outcome-stats" style="margin-top:2.5rem">
+              <div class="stat"><div class="num"><span data-count="60">0</span><sup>K+</sup></div><div class="label">Health facilities in the SATUSEHAT ecosystem</div></div>
+              <div class="stat"><div class="num"><span data-count="84">0</span><sup>%</sup></div><div class="label">Potential reduction in medication errors (industry research)</div></div>
+              <div class="stat"><div class="num"><span data-count="8">0</span><sup>K+</sup></div><div class="label">Independent pharmacies newly connected</div></div>
+            </div>
+          </section>
+
+          <!-- Retrospective -->
+          <section id="retrospective">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>If I Were Starting Over</h2>
+                <p>Looking back, a few things I'd approach differently.</p>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="process-steps">
+                <div class="process-step reveal">
+                  <div>
+                    <h3>Push harder on the onboarding problem, earlier</h3>
+                    <p>The authentication complexity was known from the beginning, but it was treated as a constraint to design around rather than a problem to solve. The pilot showed that users struggled with it in ways we could have anticipated and mitigated earlier. I'd spend more time exploring whether an equally secure but less cognitively demanding first-time experience was possible before accepting the status quo.</p>
+                  </div>
+                </div>
+                <div class="process-step reveal">
+                  <div>
+                    <h3>Design more explicitly for bad network conditions</h3>
+                    <p>Building a data-heavy portal in a country with significant connectivity variation requires specific choices about loading states, error handling, and how to gracefully handle a submission when the signal drops mid-way. Some of this was addressed, but it deserved earlier and more deliberate attention.</p>
+                  </div>
+                </div>
+                <div class="process-step reveal">
+                  <div>
+                    <h3>Build in more structured decision-logging during stakeholder reviews</h3>
+                    <p>There were periods where too many competing inputs were in flight at once, with no clear documentation of what had been decided and why. This created rework and occasional confusion about direction. A more disciplined review cadence — with written decisions and rationale — would have reduced the noise and kept everyone more aligned.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prose" style="margin-top:clamp(2.5rem,5vw,4rem)">
+              <div class="prose-block reveal" style="margin-bottom:0">
+                <p>This project reminded me that design inside complex institutions is as much about navigating organizational reality as it is about the craft of interface design. The pharmacist who successfully looked up a prescription and submitted a dispensing record during the pilot — without anyone helping them — made the complexity of getting there feel worth it.</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Closing CTA ===== -->
+    <a href="work.html" class="next-project" data-cursor="view">
+      <span class="np-label">More Case Studies</span>
+      <span class="np-title" style="display:block">Explore More Work</span>
+    </a>
+  </main>
+
+  <!-- ===== Mega Footer ===== -->
+  <footer class="mega-footer" style="margin-top:0">
+    <div class="container footer-cta-row">
+      <div>
+        <p class="f-eyebrow reveal" data-i18n="footer.eyebrow">Have a project or a role in mind?</p>
+        <h2 class="f-title reveal" data-i18n-html="footer.title">Let's <em>collaborate</em> — freelance or full-time.</h2>
+      </div>
+      <a href="mailto:bayu.alpiansyah18@gmail.com" class="btn btn--light magnetic"><span data-i18n="footer.btn">Email me</span><span class="arrow">→</span></a>
+    </div>
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="fm-track"><span>Bayu Alpiansyah&nbsp;✦&nbsp;Product Designer&nbsp;✦&nbsp;</span></div>
+      <div class="fm-track"><span>Bayu Alpiansyah&nbsp;✦&nbsp;Product Designer&nbsp;✦&nbsp;</span></div>
+    </div>
+    <div class="container footer-cols">
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.menu">Menu</p>
+        <a class="f-link" href="index.html"><span class="fl-arrow">→</span><span data-i18n="nav.home">Home</span></a>
+        <a class="f-link" href="work.html"><span class="fl-arrow">→</span><span data-i18n="nav.work">Work</span></a>
+        <a class="f-link" href="articles.html"><span class="fl-arrow">→</span><span data-i18n="nav.articles">Articles</span></a>
+        <a class="f-link" href="about.html"><span class="fl-arrow">→</span><span data-i18n="nav.about">About</span></a>
+        <a class="f-link" href="contact.html"><span class="fl-arrow">→</span><span data-i18n="nav.contact">Contact</span></a>
+      </div>
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.connect">Connect</p>
+        <a class="f-link" href="https://www.linkedin.com/in/bayu-alpiansyah/" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>LinkedIn</span></a>
+        <a class="f-link" href="https://medium.com/@bayu.alpiansyah" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>Medium</span></a>
+        <a class="f-link" href="https://www.youtube.com/@bayuxdesign" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>YouTube</span></a>
+        <a class="f-link" href="https://wa.me/6285885800802" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>WhatsApp</span></a>
+      </div>
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.contactl">Contact</p>
+        <a class="f-link" href="mailto:bayu.alpiansyah18@gmail.com"><span class="fl-arrow">→</span><span>bayu.alpiansyah18@gmail.com</span></a>
+        <a class="f-link" href="tel:+6285885800802"><span class="fl-arrow">→</span><span>+62 858-8580-0802</span></a>
+        <p class="f-loc"><span class="live-dot"></span><span data-i18n="footer.loc">Jakarta, Indonesia</span> · <span data-clock>--:--:--</span> WIB</p>
+      </div>
+    </div>
+    <div class="container footer-bottom2">
+      <span>© <span data-year>2026</span> Bayu Alpiansyah · <span data-i18n="footer.rights">Designed &amp; built with care in Jakarta.</span></span>
+      <button class="to-top magnetic" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
