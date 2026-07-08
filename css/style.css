@@ -536,34 +536,6 @@ em, .serif {
   .hero { padding-bottom: 3rem; }
 }
 
-.hero-scroll-hint {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.hero-scroll-hint .wheel {
-  width: 1px;
-  height: 3rem;
-  background: var(--line);
-  position: relative;
-  overflow: hidden;
-}
-.hero-scroll-hint .wheel::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 40%;
-  background: var(--blue);
-  animation: scrollhint 1.8s var(--ease) infinite;
-}
-
 /* ---------- Marquee ---------- */
 .marquee {
   border-block: 1px solid var(--line);
