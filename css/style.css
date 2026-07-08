@@ -1669,7 +1669,7 @@ a:hover .ui-badge .seal, .cover:hover .ui-badge .seal { transform: rotate(360deg
 /* Opening lede / pull quote */
 .case-lede {
   max-width: 44em;
-  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  margin: 24px auto clamp(2.5rem, 5vw, 4rem);
   font-family: var(--font-serif);
   font-size: clamp(1.3rem, 2.6vw, 1.7rem);
   font-weight: 500;
