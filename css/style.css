@@ -26,7 +26,7 @@
   --radius-lg: 28px;
 
   --font-body: "Manrope", "Noto Sans JP", system-ui, -apple-system, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-serif: "Satoshi", system-ui, sans-serif;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --dur: 0.7s;
