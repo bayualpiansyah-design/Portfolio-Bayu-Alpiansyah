@@ -1454,6 +1454,15 @@ a:hover .ui-badge .seal, .cover:hover .ui-badge .seal { transform: rotate(360deg
 .page-hero .display { max-width: 10em; }
 .page-hero .lead { margin-top: 1.8rem; }
 
+/* Case study hero: longer titles need to fit the first fold comfortably */
+body[data-page="project"] .page-hero {
+  padding-top: clamp(11rem, 19vw, 15.5rem);
+}
+.case-hero-title {
+  font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+  max-width: 14em;
+}
+
 /* ---------- Work page grid ---------- */
 .filters {
   display: flex;
