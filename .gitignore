@@ -15,3 +15,7 @@ npm-debug.log*
 
 # Temp
 .claude/
+
+# AI agent skills/tooling (local dev aid, not part of the site)
+.agents/
+skills-lock.json
