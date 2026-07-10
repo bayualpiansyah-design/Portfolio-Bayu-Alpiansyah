@@ -952,12 +952,12 @@ a:hover .ui-stack .ui-tile:nth-child(3) { transform: rotate(5deg) translateY(-6p
   width: 100%;
   display: block;
 }
-.pg-art-card--1 { transform: rotate(-2.5deg); }
-.pg-art-card--2 { transform: rotate(2deg) translateY(1.1rem); }
+.pg-art-card--1 { --pg-rest: rotate(-2.5deg); transform: var(--pg-rest); }
+.pg-art-card--2 { --pg-rest: rotate(2deg) translateY(1.1rem); transform: var(--pg-rest); }
 .pg-art-card--2 .pg-float { animation-duration: 8.5s; animation-delay: 0.8s; }
-.pg-art-card--3 { transform: rotate(2deg); }
+.pg-art-card--3 { --pg-rest: rotate(2deg); transform: var(--pg-rest); }
 .pg-art-card--3 .pg-float { animation-duration: 9.5s; animation-delay: 1.6s; }
-.pg-art-card--4 { transform: rotate(-2deg) translateY(1.1rem); }
+.pg-art-card--4 { --pg-rest: rotate(-2deg) translateY(1.1rem); transform: var(--pg-rest); }
 .pg-art-card--4 .pg-float { animation-duration: 8s; animation-delay: 2.4s; }
 .pg-banner:hover .pg-art-card--1,
 .pg-banner:hover .pg-art-card--3 { transform: rotate(0deg); }
@@ -966,6 +966,37 @@ a:hover .ui-stack .ui-tile:nth-child(3) { transform: rotate(5deg) translateY(-6p
 @keyframes pgFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-9px); }
+}
+
+/* Choreographed entrance — fires when banner scrolls into view (.in) */
+.pg-banner.reveal.in {
+  animation: pgBannerIn 1.05s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+@keyframes pgBannerIn {
+  0%   { opacity: 0; transform: translateY(64px) scale(0.9); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Copy rises in sequence after the banner settles */
+.pg-banner.reveal.in .pg-eyebrow { animation: pgRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards; }
+.pg-banner.reveal.in .pg-title   { animation: pgRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.42s backwards; }
+.pg-banner.reveal.in .pg-desc    { animation: pgRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.54s backwards; }
+.pg-banner.reveal.in .pg-btn     { animation: pgRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.66s backwards; }
+@keyframes pgRise {
+  0%   { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Shots pop in diagonally with a spring, landing on their resting tilt */
+.pg-banner.reveal.in .pg-art-card { animation: pgCardIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; }
+.pg-banner.reveal.in .pg-art-card--1 { animation-delay: 0.48s; }
+.pg-banner.reveal.in .pg-art-card--2 { animation-delay: 0.6s; }
+.pg-banner.reveal.in .pg-art-card--3 { animation-delay: 0.72s; }
+.pg-banner.reveal.in .pg-art-card--4 { animation-delay: 0.84s; }
+@keyframes pgCardIn {
+  0%   { opacity: 0; transform: scale(0.55) rotate(0deg); }
+  100% { opacity: 1; transform: var(--pg-rest); }
 }
 
 /* Dark site theme -> light banner (inverted) */
@@ -995,6 +1026,12 @@ a:hover .ui-stack .ui-tile:nth-child(3) { transform: rotate(5deg) translateY(-6p
 }
 @media (prefers-reduced-motion: reduce) {
   .pg-float { animation: none; }
+  .pg-banner.reveal.in,
+  .pg-banner.reveal.in .pg-eyebrow,
+  .pg-banner.reveal.in .pg-title,
+  .pg-banner.reveal.in .pg-desc,
+  .pg-banner.reveal.in .pg-btn,
+  .pg-banner.reveal.in .pg-art-card { animation: none; }
 }
 
 /* ---------- Stats ---------- */
