@@ -291,6 +291,259 @@
     sections.forEach((s) => spy.observe(s));
   }
 
+  /* ---------- Case study: image lightbox (FLIP entrance + pinch/scroll zoom) ---------- */
+  const mediaImgs = [...document.querySelectorAll(".media-frame img")];
+  if (mediaImgs.length) {
+    let lightbox, lightboxFrame, lightboxImg, closeBtn;
+    let activeTrigger = null;
+    let scale = 1, tx = 0, ty = 0;
+    const MIN_SCALE = 1, MAX_SCALE = 4;
+    const pointers = new Map();
+    let pinchStartDist = 0, pinchStartScale = 1;
+    let dragging = false, moved = false;
+    let dragStart = { x: 0, y: 0 }, dragOrigin = { x: 0, y: 0 };
+
+    const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+    function applyTransform(smooth) {
+      lightboxImg.classList.toggle("is-settling", !!smooth);
+      lightboxImg.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+      lightboxFrame.classList.toggle("is-zoomed", scale > 1.01);
+      if (smooth) setTimeout(() => lightboxImg.classList.remove("is-settling"), 360);
+    }
+
+    function clampPan() {
+      const maxX = (lightboxFrame.clientWidth * (scale - 1)) / 2;
+      const maxY = (lightboxFrame.clientHeight * (scale - 1)) / 2;
+      tx = clamp(tx, -maxX, maxX);
+      ty = clamp(ty, -maxY, maxY);
+    }
+
+    function zoomAt(clientX, clientY, nextScale, smooth) {
+      const r = lightboxFrame.getBoundingClientRect();
+      const px = clientX - r.left - r.width / 2;
+      const py = clientY - r.top - r.height / 2;
+      const ratio = nextScale / scale;
+      tx = px - (px - tx) * ratio;
+      ty = py - (py - ty) * ratio;
+      scale = nextScale;
+      clampPan();
+      applyTransform(smooth);
+    }
+
+    function onWheel(e) {
+      if (!lightbox.classList.contains("is-open")) return;
+      e.preventDefault();
+      const next = clamp(scale * (e.deltaY > 0 ? 0.88 : 1.14), MIN_SCALE, MAX_SCALE);
+      zoomAt(e.clientX, e.clientY, next, false);
+    }
+
+    function onPointerDown(e) {
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      moved = false;
+      if (pointers.size === 1) {
+        dragging = true;
+        dragStart = { x: e.clientX, y: e.clientY };
+        dragOrigin = { x: tx, y: ty };
+        try { lightboxFrame.setPointerCapture(e.pointerId); } catch (err) {}
+      } else if (pointers.size === 2) {
+        dragging = false;
+        const pts = [...pointers.values()];
+        pinchStartDist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+        pinchStartScale = scale;
+      }
+    }
+
+    function onPointerMove(e) {
+      if (!pointers.has(e.pointerId)) return;
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+      if (pointers.size === 2) {
+        const pts = [...pointers.values()];
+        const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+        const midX = (pts[0].x + pts[1].x) / 2;
+        const midY = (pts[0].y + pts[1].y) / 2;
+        const next = clamp(pinchStartScale * (dist / pinchStartDist), MIN_SCALE, MAX_SCALE);
+        zoomAt(midX, midY, next, false);
+        moved = true;
+        return;
+      }
+
+      if (dragging && scale > 1) {
+        const dx = e.clientX - dragStart.x;
+        const dy = e.clientY - dragStart.y;
+        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
+        tx = dragOrigin.x + dx;
+        ty = dragOrigin.y + dy;
+        clampPan();
+        applyTransform(false);
+        lightboxFrame.classList.add("is-panning");
+      }
+    }
+
+    function onPointerUp(e) {
+      pointers.delete(e.pointerId);
+      dragging = false;
+      lightboxFrame.classList.remove("is-panning");
+      if (pointers.size === 0 && !moved) {
+        const next = scale > 1.01 ? 1 : 2.2;
+        zoomAt(e.clientX, e.clientY, next, true);
+      }
+    }
+
+    function buildLightbox() {
+      lightbox = document.createElement("div");
+      lightbox.className = "lightbox";
+      lightbox.setAttribute("role", "dialog");
+      lightbox.setAttribute("aria-modal", "true");
+      lightbox.setAttribute("aria-label", "Image preview");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightbox.innerHTML =
+        '<div class="lightbox-backdrop"></div>' +
+        '<button type="button" class="lightbox-close" aria-label="Close preview">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+        "</button>" +
+        '<div class="lightbox-frame"><img class="lightbox-img" alt="" draggable="false" /></div>' +
+        '<p class="lightbox-hint">Scroll or pinch to zoom · Drag to pan</p>';
+      document.body.appendChild(lightbox);
+      lightboxFrame = lightbox.querySelector(".lightbox-frame");
+      lightboxImg = lightbox.querySelector(".lightbox-img");
+      closeBtn = lightbox.querySelector(".lightbox-close");
+
+      lightbox.querySelector(".lightbox-backdrop").addEventListener("click", closeLightbox);
+      closeBtn.addEventListener("click", closeLightbox);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+      });
+
+      lightboxFrame.addEventListener("wheel", onWheel, { passive: false });
+      lightboxFrame.addEventListener("pointerdown", onPointerDown);
+      window.addEventListener("pointermove", onPointerMove);
+      window.addEventListener("pointerup", onPointerUp);
+      window.addEventListener("pointercancel", onPointerUp);
+    }
+
+    function fitSize(naturalW, naturalH) {
+      const maxW = Math.min(window.innerWidth * 0.92, 1600);
+      const maxH = window.innerHeight * 0.86;
+      const ratio = Math.min(maxW / naturalW, maxH / naturalH, 1.6);
+      return { w: naturalW * ratio, h: naturalH * ratio };
+    }
+
+    function openLightbox(trigger) {
+      if (!lightbox) buildLightbox();
+      activeTrigger = trigger;
+      const r0 = trigger.getBoundingClientRect();
+      const naturalW = trigger.naturalWidth || r0.width;
+      const naturalH = trigger.naturalHeight || r0.height;
+      const { w, h } = fitSize(naturalW, naturalH);
+      const targetLeft = (window.innerWidth - w) / 2;
+      const targetTop = (window.innerHeight - h) / 2;
+      const sourceRadius = getComputedStyle(trigger.closest(".media-frame")).borderRadius;
+
+      lightboxImg.src = trigger.currentSrc || trigger.src;
+      lightboxImg.alt = trigger.alt || "";
+      scale = 1; tx = 0; ty = 0;
+      lightboxImg.classList.remove("is-settling");
+      lightboxImg.style.transform = "translate(0px, 0px) scale(1)";
+      lightboxFrame.classList.remove("is-zoomed");
+
+      lightboxFrame.style.width = w + "px";
+      lightboxFrame.style.height = h + "px";
+      lightboxFrame.style.left = targetLeft + "px";
+      lightboxFrame.style.top = targetTop + "px";
+
+      document.body.style.overflow = "hidden";
+      lightbox.setAttribute("aria-hidden", "false");
+
+      if (reduceMotion) {
+        lightboxFrame.style.transition = "none";
+        lightboxFrame.style.transform = "none";
+        lightboxFrame.style.borderRadius = "20px";
+        lightbox.classList.add("is-open");
+        closeBtn.focus({ preventScroll: true });
+        return;
+      }
+
+      // Invert: make the frame visually match the clicked thumbnail's rect
+      const scaleX = r0.width / w;
+      const scaleY = r0.height / h;
+      const deltaX = r0.left + r0.width / 2 - (targetLeft + w / 2);
+      const deltaY = r0.top + r0.height / 2 - (targetTop + h / 2);
+      lightboxFrame.style.transition = "none";
+      lightboxFrame.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${scaleX}, ${scaleY})`;
+      lightboxFrame.style.borderRadius = sourceRadius;
+
+      lightbox.classList.add("is-open");
+
+      // Play: grow from the thumbnail's rect to the full centered size
+      void lightboxFrame.offsetWidth;
+      lightboxFrame.style.transition =
+        "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.6s cubic-bezier(0.22, 1, 0.36, 1)";
+      lightboxFrame.style.transform = "translate(0px, 0px) scale(1, 1)";
+      lightboxFrame.style.borderRadius = "20px";
+
+      closeBtn.focus({ preventScroll: true });
+    }
+
+    function closeLightbox() {
+      if (!lightbox || !lightbox.classList.contains("is-open")) return;
+      document.body.style.overflow = "";
+      lightbox.setAttribute("aria-hidden", "true");
+
+      if (scale !== 1 || tx !== 0 || ty !== 0) {
+        lightboxImg.classList.add("is-settling");
+        lightboxImg.style.transform = "translate(0px, 0px) scale(1)";
+        scale = 1; tx = 0; ty = 0;
+      }
+
+      const trigger = activeTrigger;
+      if (trigger && !reduceMotion) {
+        const r0 = trigger.getBoundingClientRect();
+        const fRect = lightboxFrame.getBoundingClientRect();
+        const scaleX = r0.width / fRect.width;
+        const scaleY = r0.height / fRect.height;
+        const deltaX = r0.left + r0.width / 2 - (fRect.left + fRect.width / 2);
+        const deltaY = r0.top + r0.height / 2 - (fRect.top + fRect.height / 2);
+        const sourceRadius = getComputedStyle(trigger.closest(".media-frame")).borderRadius;
+        lightboxFrame.style.transition =
+          "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
+        lightboxFrame.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${scaleX}, ${scaleY})`;
+        lightboxFrame.style.borderRadius = sourceRadius;
+      }
+
+      lightbox.classList.remove("is-open");
+      if (trigger) trigger.focus({ preventScroll: true });
+      activeTrigger = null;
+    }
+
+    mediaImgs.forEach((triggerImg) => {
+      const triggerFrame = triggerImg.closest(".media-frame");
+      if (!triggerFrame) return;
+      triggerFrame.setAttribute("tabindex", "0");
+      triggerFrame.setAttribute("role", "button");
+      triggerFrame.setAttribute("aria-label", "Expand image");
+
+      const badge = document.createElement("span");
+      badge.className = "media-zoom-badge";
+      badge.setAttribute("aria-hidden", "true");
+      badge.innerHTML =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>';
+      triggerFrame.appendChild(badge);
+
+      triggerFrame.addEventListener("click", (e) => {
+        e.preventDefault();
+        openLightbox(triggerImg);
+      });
+      triggerFrame.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openLightbox(triggerImg);
+        }
+      });
+    });
+  }
+
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll(".faq-q").forEach((q) => {
     q.addEventListener("click", () => {
