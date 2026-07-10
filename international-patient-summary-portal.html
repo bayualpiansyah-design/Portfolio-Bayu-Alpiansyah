@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Patient Summary Portal Viewer — Health Records Across Borders — Bayu Alpiansyah</title>
+  <meta name="description" content="Case study: designing a login-free, cross-border health portal that lets Saudi healthcare workers read an Indonesian Hajj pilgrim's medical summary in seconds — from a single QR code." />
+  <link rel="canonical" href="https://heybayu.com/international-patient-summary-portal" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Bayu Alpiansyah" />
+  <meta property="og:title" content="International Patient Summary Portal Viewer — Health Records Across Borders" />
+  <meta property="og:description" content="Case study: designing a login-free, cross-border health portal that lets Saudi healthcare workers read an Indonesian Hajj pilgrim's medical summary in seconds — from a single QR code." />
+  <meta property="og:url" content="https://heybayu.com/international-patient-summary-portal" />
+  <meta property="og:image" content="https://heybayu.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="International Patient Summary Portal Viewer — Health Records Across Borders" />
+  <meta name="twitter:description" content="Case study: designing a login-free, cross-border health portal that lets Saudi healthcare workers read an Indonesian Hajj pilgrim's medical summary in seconds — from a single QR code." />
+  <meta name="twitter:image" content="https://heybayu.com/assets/og-image.png" />
+  <script>(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}if(!t)t="dark";document.documentElement.setAttribute("data-theme",t);})();</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="project" data-project-name="International Patient Summary Portal Viewer">
+
+  <div class="page-transition"><span class="pt-mark">bayu.</span></div>
+  <div class="progress-bar"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo magnetic" aria-label="Bayu Alpiansyah — Home"><img src="assets/logo.svg" alt="Bayu Alpiansyah" class="logo-mark" width="34" height="34" /></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="work.html" class="nav-link is-active" data-i18n="nav.work">Work</a>
+        <a href="articles.html" class="nav-link" data-i18n="nav.articles">Articles</a>
+        <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-controls">
+        <div class="lang-switch">
+          <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+            <span data-lang-label>EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <div class="lang-menu" role="listbox">
+            <button type="button" role="option" data-lang="id">ID</button>
+            <button type="button" role="option" data-lang="en" class="is-active">EN</button>
+            <button type="button" role="option" data-lang="ja">JP</button>
+          </div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn--nav magnetic"><span data-i18n="nav.cta">Let's talk</span><span class="arrow">→</span></a>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html"><small>01</small><span data-i18n="nav.home">Home</span></a>
+    <a href="work.html"><small>02</small><span data-i18n="nav.work">Work</span></a>
+    <a href="articles.html"><small>03</small><span data-i18n="nav.articles">Articles</span></a>
+    <a href="about.html"><small>04</small><span data-i18n="nav.about">About</span></a>
+    <a href="contact.html"><small>05</small><span data-i18n="nav.contact">Contact</span></a>
+    <button type="button" class="mobile-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+
+  <main>
+    <!-- ===== Case hero ===== -->
+    <section class="page-hero" style="padding-bottom:0">
+      <div class="container">
+        <p class="eyebrow reveal">Case Study — Cross-Border Health</p>
+        <h1 class="display case-hero-title">
+          <span class="line"><span class="li">International Patient Summary —</span></span>
+          <span class="line"><span class="li">a health record that follows</span></span>
+          <span class="line"><span class="li">the patient <em>across borders.</em></span></span>
+        </h1>
+
+        <p class="case-lede reveal" style="--rd:.2s">An unconscious pilgrim, a Saudi doctor who doesn't speak Indonesian, and a QR code clipped to a wrist. The portal had to turn that into a full medical history — in seconds, with no app and no login.</p>
+
+        <div class="case-meta reveal">
+          <div><div class="label">Role</div><div class="value">UI/UX Designer</div></div>
+          <div><div class="label">Timeline</div><div class="value">Feb – May 2024</div></div>
+          <div><div class="label">Platform</div><div class="value">Responsive Web</div></div>
+          <div><div class="label">Context</div><div class="value">Ministry of Health</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Hero media ===== -->
+    <section class="case-hero-media">
+      <div class="container">
+        <figure class="media-figure reveal" style="margin:0">
+          <div class="media-frame">
+            <img src="assets/case-studies/ips-portal-viewer/landing-hero.webp" alt="International Patient Summary Portal Viewer shown across mobile, tablet, and desktop — live at ips.kemkes.go.id" loading="eager" />
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Long-form content with sticky TOC ===== -->
+    <section class="section">
+      <div class="container case-layout">
+        <aside class="case-toc" aria-label="Table of contents">
+          <p class="case-toc-label">On this page</p>
+          <nav>
+            <a href="#scene">The Scene</a>
+            <a href="#brief">The Brief</a>
+            <a href="#research">Research</a>
+            <a href="#problem">The Core Problem</a>
+            <a href="#direction">Visual Direction</a>
+            <a href="#decisions">Design Decisions</a>
+            <a href="#product">The Final Product</a>
+            <a href="#impact">Scale &amp; Impact</a>
+            <a href="#reflection">Honest Reflection</a>
+            <a href="#lessons">What It Taught Me</a>
+          </nav>
+        </aside>
+
+        <div class="case-content">
+
+          <!-- Scene -->
+          <section id="scene">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>When a Doctor Can't Read Your Records</h2>
+                <p>Every year, <strong>221,000 Indonesians</strong> — the world's single largest national pilgrim contingent — travel to Saudi Arabia for Hajj. Many are elderly. A significant portion live with chronic conditions like hypertension, heart disease, or diabetes. Many have waited decades on a queue just for this moment.</p>
+                <p>Now imagine you're an emergency doctor at a Saudi hospital, and an unconscious pilgrim is brought in. They can't speak. Their companion doesn't speak Arabic. The only thing the patient has on them is a card clipped to their wrist. On that card: a QR code.</p>
+                <p>Before 2024, what happened next was slow. The attending physician had to start from scratch — running tests, waiting for results, hoping someone could translate. In previous years, patients often waited a long time before receiving treatment because they had to undergo observation and re-examination first.</p>
+                <p>The IPS Portal Viewer is what was designed to sit on the other end of that QR code. Scan it. Enter a passcode. See the patient's full health summary in seconds — allergies, medications, diagnoses, vaccinations, demographic data — all of it, without installing an app, without logging in, without any prior setup.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Brief -->
+          <section id="brief">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>The Brief That Landed on My Desk</h2>
+                <p>I want to be upfront about what kind of project this actually was.</p>
+                <p>Internally, we'd call this a <em>candi</em> — a project that drops suddenly, tied to an immovable deadline. The Ministry of Health had already committed to equipping every Indonesian pilgrim with a Hajj Health Card (KKJH) carrying an IPS QR code for the 2024 Hajj season. The portal that Saudi healthcare workers would use to read those QR codes needed to be designed, built, and deployed in time. My involvement started with a PRD landing in my hands and a calendar counting down.</p>
+                <p>What I had: a detailed Product Requirements Document. What I didn't have: time for a formal discovery sprint, access to Saudi healthcare workers for interviews, or the luxury of iterating on validated prototypes with real users.</p>
+                <p>This isn't an excuse — it's honest context for the process I'll describe. Working with constraints this tight forces you to be precise about what matters, and to find signal in every source available.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Research -->
+          <section id="research">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>Research Without the Ideal Setup</h2>
+                <p>Not every project starts with user interviews. This was one of them. But "no user interviews" doesn't mean "no research" — it means finding the signal elsewhere.</p>
+                <p><strong>Reading the PRD as a user-journey document.</strong> The PM team had done significant legwork mapping out user flows, edge cases, and system behaviors. I treated the PRD not just as a spec to execute but as a proxy for user needs — paying attention to what was specified, and also reading between the lines. Why did the passcode need to be the <em>last three digits</em> of the pilgrim number specifically? Why a 20-minute session, not 30 or 10? Those decisions carried assumptions about users that I needed to understand.</p>
+                <p><strong>Benchmarking health-data portals.</strong> The PRD referenced a Smart Health Links implementation from CIRG Washington as a comparable system. I looked at several QR-driven medical identification tools — how they handled the scan-to-data flow, how they communicated security requirements, and how they displayed structured clinical data legibly for non-Indonesian healthcare workers.</p>
+                <p><strong>Understanding the context through secondary data.</strong> The people using this portal aren't at a desk in a quiet clinic. They're responding to pilgrims in Mecca in summer — temperatures regularly above 45°C, high patient volumes, and a language gap that makes even simple communication difficult. Almost 40% of Indonesian pilgrims are elderly and high-risk. The most common conditions among those who pass away during Hajj are cardiovascular and respiratory — exactly the kind of information that needs to be <em>immediately visible</em> when time matters.</p>
+                <p>That understanding shaped every decision about how fast the portal needed to respond, how much friction was acceptable at each step, and what "reading data at a glance" actually meant for this user.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Core Problem -->
+          <section id="problem">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>The Core Problem</h2>
+                <p>Stripping everything back, the real design challenge wasn't technical. It was human.</p>
+              </div>
+            </div>
+
+            <p class="pull-quote reveal">How do you give an Arabic-speaking healthcare worker — possibly on a phone, in a field clinic, responding to someone who may be unconscious — rapid <em>and</em> secure access to an Indonesian patient's medical history?</p>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <p>Two tensions sat at the heart of this:</p>
+                <p><strong>Speed vs. security.</strong> Medical emergencies don't wait. But patient data is sensitive. Every security mechanism is also a potential delay.</p>
+                <p><strong>Trust vs. access.</strong> The portal has no user authentication. Anyone who scans a QR code and enters the right passcode can read the data. That's a deliberate choice — and it needed to be designed carefully.</p>
+              </div>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>Constraints as the Starting Point</h3>
+                <p>The PRD carried several non-negotiables that ended up shaping the entire experience. Rather than treating them as restrictions, I treated them as design inputs.</p>
+                <p><strong>No login required.</strong> Saudi doctors shouldn't need to create accounts or carry portal credentials. Friction at the entry point of an emergency isn't just a UX problem — it's a safety problem.</p>
+                <p><strong>Passcode tied to the patient.</strong> Each QR code is protected by the last three digits of the pilgrim's registration number. Simple enough that a conscious but disoriented patient can state it. Specific enough that it can't be guessed without context.</p>
+                <p><strong>20-minute sessions.</strong> Long enough for an emergency consultation. Short enough that an unattended device left on a desk doesn't leave patient data exposed indefinitely.</p>
+                <p><strong>IP whitelisting for trusted networks.</strong> If access comes from a whitelisted hospital IP, the portal bypasses the passcode and triggers a silent PDF download of the patient's record. Network-level trust within a hospital already implies institutional security — making the user re-enter a passcode there would be redundant friction.</p>
+                <p><strong>150-day QR expiry, geofenced to Saudi Arabia and Indonesia, ISO 27269:2021 compliant.</strong> Patient data follows the international IPS standard with FHIR mapping, covering exactly five categories: demographic data, allergies and intolerances, immunizations, medical problems, and medications.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Visual Direction -->
+          <section id="direction">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>Finding the Visual Direction</h2>
+                <p>Before going into flows, the first design decision was what a Saudi healthcare worker sees the moment they visit the portal.</p>
+                <p>I explored four landing-page directions. All shared the same structural logic — Kemenkes logo, title, description, and two CTAs ("Scan IPS QR Code" and "Learn How to Scan") — but differed in illustration style, visual weight, and the hierarchy between text and image.</p>
+              </div>
+            </div>
+
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="media-frame">
+                  <img src="assets/case-studies/ips-portal-viewer/landing-page-variants.png" alt="Several landing-page directions explored side by side — varying illustration style, layout weight, and hierarchy" loading="lazy" />
+                </div>
+                <figcaption>Landing-page directions explored — same structure, different illustration style, weight, and hierarchy.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <p>The core questions driving the comparison:</p>
+                <p>Does this feel credible for a medical context without feeling clinical and cold? Is the primary CTA — "Scan IPS QR Code" — unmissable on first glance? Does the illustration reinforce what the portal <em>does</em> (scanning a physical card), rather than just decorating the page?</p>
+                <p>The final direction balanced warmth with institutional weight. The dark teal palette aligned with Indonesian Ministry of Health branding while reading as trustworthy in a medical context. The hero illustration explicitly showed a hand scanning a QR code on a card — functional, not abstract. "Learn How to Scan" was retained as a secondary link below the primary button: accessible, but not competing for attention.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Design Decisions -->
+          <section id="decisions">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>Design Decisions Worth Talking Through</h2>
+                <p>Most of the interesting work here happened in the <em>why</em>, not the <em>what</em>. Six decisions carried the experience.</p>
+              </div>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>1. Removing login entirely</h3>
+                <p>In any standard data portal, you'd expect authentication at the door. Here, it was explicitly removed.</p>
+                <p>This sounds risky. But think about what login actually means in this context: Saudi doctors would need accounts created and managed somewhere. Who creates them? Who manages them? What happens when a doctor's credentials stop working mid-Hajj season? Every one of those questions becomes an operational failure point that has nothing to do with the patient needing care.</p>
+                <p>The security model moved <em>into</em> the QR code itself (digitally signed), into the passcode (patient-controlled, not system-managed), and into the session timer (auto-expiry). This isn't a shortcut — it's a deliberately distributed model that doesn't depend on any single point of institutional infrastructure in Saudi Arabia.</p>
+              </div>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>2. The passcode screen — whose job is it?</h3>
+                <p>A subtle ambiguity: who actually enters the passcode? In an ideal scenario, a conscious patient states their number and the doctor types it in. In the real scenario — unconscious patient, no companion nearby — this requires the card itself to be legible, or a colleague to assist.</p>
+                <p>The design reflects that ambiguity. The input screen is simple enough to hand to a patient to tap themselves, or quick enough for a healthcare worker to type under pressure. The T&amp;C checkbox below required both agreement and intent — a small but deliberate friction point signalling that this is protected data. Error handling was kept non-alarming: <em>"Passcode does not match"</em> rather than anything accusatory — communicate the issue and invite a retry, without making a stressed doctor feel they've made a major mistake.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="media-frame">
+                  <img src="assets/case-studies/ips-portal-viewer/passcode-screen-states.webp" alt="Patient passcode entry modal shown across desktop, tablet, and mobile" loading="lazy" />
+                </div>
+                <figcaption>The patient passcode entry screen — designed to be handed over or typed under pressure.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>3. Session expiry without a countdown</h3>
+                <p>The 20-minute timer runs invisibly. There's no countdown on screen.</p>
+                <p>This was deliberate. A visible countdown in a medical emergency creates anxiety and distraction — the doctor's attention should be on the patient, not a timer. When the session expires, a clean full-screen overlay appears: <em>"Your Session Has Expired. Re-enter patient passcode to view data."</em> The underlying summary stays visible but blurred in the background — enough context that the doctor knows where they left off, while the data itself is fully obscured until re-authentication.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="media-placeholder">
+                  <span class="mp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></span>
+                  <span class="mp-tag">In construction</span>
+                  <span class="mp-note">Session-expiry overlay walkthrough — a 15&nbsp;MB animation currently being re-exported as a lighter clip.</span>
+                </div>
+                <figcaption>Session expiry — a full-screen overlay prompts re-authentication without losing context.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>4. Expandable data sections</h3>
+                <p>The patient summary shows five categories. All are collapsed by default except Patient Data.</p>
+                <p>This hierarchy matches the emergency use case. When someone is brought in unconscious, the doctor first confirms identity — name, date of birth, ID number. Only then do they check allergies before administering anything. Medical history and current medications can be reviewed as time allows. A single fully-expanded page would force the doctor to scroll through everything at once; collapsing by default keeps the five categories within a single screen-height, so the user reaches exactly what they need.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="media-frame">
+                  <img src="assets/case-studies/ips-portal-viewer/patient-data-screen.webp" alt="Patient summary screen with expandable sections for demographics, allergies, immunizations, medical problems, and medications" loading="lazy" />
+                </div>
+                <figcaption>Five categories, collapsed by default — identity first, everything else a tap away.</figcaption>
+              </figure>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>5. The IP-whitelist flow — designing for the invisible</h3>
+                <p>When the system detects a whitelisted hospital IP, the experience changes completely. Scan the QR from a regular phone camera and the record auto-downloads as a PDF — no passcode, no interface. Access through the portal itself, and the download happens silently in the background while the scanner screen stays put.</p>
+                <p>From a UI perspective, this meant designing for a flow the user never consciously experiences. The challenge was making the <em>background behavior</em> reliable and its failure states graceful — what does the doctor see if the download fails, or the network drops mid-download? This required close collaboration with engineering on timing, fallbacks, and how to surface failure without alarming the user unnecessarily.</p>
+              </div>
+            </div>
+
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h3>6. Error states for high-pressure moments</h3>
+                <p>Not every scan goes well. The portal needed to handle a non-IPS QR code, an expired code (past the 150-day window), a code with no passcode attached, camera permission denied, and no data found for a scanned patient.</p>
+                <p>Each error state was designed to be direct and actionable — not just a message explaining the problem, but a clear next step. "Try Again" re-opens the camera. "Back to Homepage" returns to the start. "Please scan a valid IPS QR code" says exactly what went wrong, without technical jargon.</p>
+              </div>
+            </div>
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="media-placeholder">
+                  <span class="mp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></span>
+                  <span class="mp-tag">In construction</span>
+                  <span class="mp-note">Error-state screens — invalid QR, no data found, and camera-permission denied. Export pending.</span>
+                </div>
+                <figcaption>Error states — each pairs a plain-language explanation with a single clear next step.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- The Final Product -->
+          <section id="product">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>The Final Product</h2>
+                <p>The IPS Portal Viewer shipped in time for the 2024 Hajj season and is live at <a href="https://ips.kemkes.go.id" target="_blank" rel="noopener">ips.kemkes.go.id</a>. The flow for a healthcare worker:</p>
+                <p>Open the portal — no login, no account. Tap "Scan IPS QR Code" and the camera opens with live QR detection. Point at the pilgrim's card; the QR is read automatically. Enter the passcode (the last three digits of the pilgrim's registration number), agree to the terms, and tap OK. The patient summary opens — identity confirmed, data accessible by section. After 20 minutes, the session expires and prompts re-authentication.</p>
+                <p><strong>For hospital networks with whitelisted IPs,</strong> the scan and passcode steps are bypassed entirely — the record downloads automatically. The portal is fully responsive across mobile, tablet, and desktop, with mobile as the primary form factor given the emergency scan context.</p>
+              </div>
+            </div>
+
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="media-placeholder">
+                  <span class="mp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></span>
+                  <span class="mp-tag">In construction</span>
+                  <span class="mp-note">Full user-flow demo — landing → scan → passcode → patient summary. Screen recording pending.</span>
+                </div>
+                <figcaption>The complete flow: landing page → QR scan → passcode entry → patient summary.</figcaption>
+              </figure>
+            </div>
+
+            <div class="container">
+              <figure class="media-figure reveal">
+                <div class="media-frame">
+                  <img src="assets/case-studies/ips-portal-viewer/qr-code-scan.webp" alt="QR code scanner screen with live detection, shown across desktop, tablet, and mobile" loading="lazy" />
+                </div>
+                <figcaption>The scanner screen — live QR detection, with mobile as the primary form factor.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Scale and Impact -->
+          <section id="impact">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>Scale and Impact</h2>
+                <p>A few numbers give this project its weight. In 2024, <strong>221,000</strong> Indonesian pilgrims were equipped with KKJH health cards carrying IPS QR codes — one of the first large-scale cross-border health-data interoperability implementations in the world using the WHO IPS standard, with <strong>14 Saudi hospitals</strong> formally cooperating for the season.</p>
+                <p>Around 40% of Indonesian Hajj pilgrims are elderly and high-risk — the exact demographic most likely to need this portal in an emergency. Hajj mortality moved from <strong>774 deaths in 2023 to 462 in 2024</strong>, and the Ministry of Health cited the IPS QR code system as a key part of its intervention strategy.</p>
+                <p>I won't claim the portal design caused that drop — the full intervention included medical training, early health screening, on-ground emergency teams, and more. But the system existed to make treatment faster and better informed, and the overall direction moved the right way.</p>
+              </div>
+            </div>
+
+            <div class="outcome-stats" style="margin-top:2.5rem">
+              <div class="stat"><div class="num"><span data-count="221">0</span><sup>K</sup></div><div class="label">Pilgrims equipped with IPS QR health cards (2024)</div></div>
+              <div class="stat"><div class="num"><span data-count="14">0</span></div><div class="label">Saudi hospitals cooperating for the 2024 season</div></div>
+              <div class="stat"><div class="num"><span data-count="40">0</span><sup>%</sup></div><div class="label">Of pilgrims elderly and high-risk — the core users</div></div>
+            </div>
+
+            <div class="prose" style="margin-top:clamp(2rem,4vw,3rem)">
+              <div class="prose-block reveal" style="margin-bottom:0">
+                <p>The bigger picture: Indonesia and Malaysia have since been cited as pioneers in large-scale cross-border health-data interoperability. The IPS Health Card has expanded into a full SISKOHAT–Nusuk data integration between the Indonesian and Saudi government systems.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Honest Reflection -->
+          <section id="reflection">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>Honest Reflection</h2>
+                <p>If I'd had more time and better access, here's what I'd revisit.</p>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="process-steps">
+                <div class="process-step reveal">
+                  <div>
+                    <h3>Testing with actual users</h3>
+                    <p>Even five sessions with Saudi hospital staff would have surfaced things I couldn't anticipate from a desk. How they hold their phone when scanning in a crowded field clinic. Whether Arabic localization changed the visual rhythm. Whether the 20-minute timer felt too long, too short, or just right in practice.</p>
+                  </div>
+                </div>
+                <div class="process-step reveal">
+                  <div>
+                    <h3>Arabic localization from day one</h3>
+                    <p>The primary users are Arabic speakers, but the portal shipped in English first, with localization marked as a future phase. RTL layout is more than translating text — it flips the entire spatial logic of the interface. This should have been a design constraint from the first wireframe, not a Phase 2 item.</p>
+                  </div>
+                </div>
+                <div class="process-step reveal">
+                  <div>
+                    <h3>A clearer protocol for "the patient can't help"</h3>
+                    <p>The passcode flow assumes the patient is conscious enough to provide their number, or that a companion nearby knows it. For a patient who arrives alone and unconscious, there's no explicit escalation path in the design. That's the edge case that deserved more explicit consideration.</p>
+                  </div>
+                </div>
+                <div class="process-step reveal">
+                  <div>
+                    <h3>Session length validated in real use</h3>
+                    <p>20 minutes was a product decision. I'd want to know whether that number actually matches how long a typical emergency consultation takes — the kind of parameter that sounds reasonable on paper but might be wrong for 30% of real cases.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="chapter-divider" aria-hidden="true"></div>
+
+          <!-- Lessons -->
+          <section id="lessons">
+            <div class="prose">
+              <div class="prose-block reveal">
+                <h2>What This Project Taught Me</h2>
+                <p>Designing under tight constraints — without user research, on a government deadline, for a life-critical use case — forces a kind of discipline that's easy to neglect when you have more time and resources. You can't iterate endlessly. You have to commit to principles and defend them.</p>
+                <p>The core principle that guided every decision here: <strong>friction is not neutral in an emergency.</strong> Every extra tap, every confirmation dialog, every loading screen is a moment where a Saudi doctor's attention is on the interface instead of the patient. Design for the worst case — and the normal case takes care of itself.</p>
+              </div>
+              <div class="prose-block reveal" style="margin-bottom:0">
+                <p>I also came away with genuine respect for what a well-written PRD can do when user research isn't available. The PM team had done real work thinking through edge cases, security models, and behavioral flows. My job was to take those specifications and translate them into something that felt human and trustworthy — and to ask the right questions when the spec left gaps.</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Closing CTA ===== -->
+    <a href="work.html" class="next-project" data-cursor="view">
+      <span class="np-label">More Case Studies</span>
+      <span class="np-title" style="display:block">Explore More Work</span>
+    </a>
+  </main>
+
+  <!-- ===== Mega Footer ===== -->
+  <footer class="mega-footer" style="margin-top:0">
+    <div class="container footer-cta-row">
+      <div>
+        <p class="f-eyebrow reveal" data-i18n="footer.eyebrow">Have a project or a role in mind?</p>
+        <h2 class="f-title reveal" data-i18n-html="footer.title">Let's <em>collaborate</em> — freelance or full-time.</h2>
+      </div>
+      <a href="mailto:bayu.alpiansyah18@gmail.com" class="btn btn--light magnetic"><span data-i18n="footer.btn">Email me</span><span class="arrow">→</span></a>
+    </div>
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="fm-track"><span>Bayu Alpiansyah&nbsp;✦&nbsp;Product Designer&nbsp;✦&nbsp;</span></div>
+      <div class="fm-track"><span>Bayu Alpiansyah&nbsp;✦&nbsp;Product Designer&nbsp;✦&nbsp;</span></div>
+    </div>
+    <div class="container footer-cols">
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.menu">Menu</p>
+        <a class="f-link" href="index.html"><span class="fl-arrow">→</span><span data-i18n="nav.home">Home</span></a>
+        <a class="f-link" href="work.html"><span class="fl-arrow">→</span><span data-i18n="nav.work">Work</span></a>
+        <a class="f-link" href="articles.html"><span class="fl-arrow">→</span><span data-i18n="nav.articles">Articles</span></a>
+        <a class="f-link" href="about.html"><span class="fl-arrow">→</span><span data-i18n="nav.about">About</span></a>
+        <a class="f-link" href="contact.html"><span class="fl-arrow">→</span><span data-i18n="nav.contact">Contact</span></a>
+      </div>
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.connect">Connect</p>
+        <a class="f-link" href="https://www.linkedin.com/in/bayu-alpiansyah/" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>LinkedIn</span></a>
+        <a class="f-link" href="https://medium.com/@bayu.alpiansyah" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>Medium</span></a>
+        <a class="f-link" href="https://www.youtube.com/@bayuxdesign" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>YouTube</span></a>
+        <a class="f-link" href="https://wa.me/6285885800802" target="_blank" rel="noopener"><span class="fl-arrow">→</span><span>WhatsApp</span></a>
+      </div>
+      <div class="f-col">
+        <p class="f-label" data-i18n="footer.contactl">Contact</p>
+        <a class="f-link" href="mailto:bayu.alpiansyah18@gmail.com"><span class="fl-arrow">→</span><span>bayu.alpiansyah18@gmail.com</span></a>
+        <a class="f-link" href="tel:+6285885800802"><span class="fl-arrow">→</span><span>+62 858-8580-0802</span></a>
+        <p class="f-loc"><span class="live-dot"></span><span data-i18n="footer.loc">Jakarta, Indonesia</span> · <span data-clock>--:--:--</span> WIB</p>
+      </div>
+    </div>
+    <div class="container footer-bottom2">
+      <span>© <span data-year>2026</span> Bayu Alpiansyah · <span data-i18n="footer.rights">Designed &amp; built with care in Jakarta.</span></span>
+      <button class="to-top magnetic" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
