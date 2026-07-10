@@ -11,7 +11,7 @@
     en: {
       "meta.home": "Bayu Alpiansyah — Product Designer",
       "meta.work": "Work — Bayu Alpiansyah",
-      "meta.project": "SATUSEHAT Resep — Case Study — Bayu Alpiansyah",
+      "meta.project": "Case Study — Bayu Alpiansyah",
       "meta.about": "About — Bayu Alpiansyah",
       "meta.contact": "Contact — Bayu Alpiansyah",
 
@@ -69,7 +69,7 @@
       "home.pg.lead": "A different side of my portfolio lives on Dribbble: UI explorations, visual concepts, and selected client work — presented as pure visuals rather than fully documented case studies.",
       "home.pg.cta": "Explore my Dribbble",
       "home.p1.desc": "A standardized digital prescription enabling 8,000+ small pharmacies across Indonesia to redeem medication clearly and quickly.",
-      "home.p2.desc": "Designing key features for a national health app serving 1M+ users — vaccine certificates, smartwatch integration, and pregnancy screening.",
+      "home.p2.desc": "A cross-border health portal that lets Saudi doctors read an Indonesian Hajj pilgrim's medical summary in seconds — no login, no app, scanned from a QR code.",
       "home.p3.desc": "International vaccine certificates people can open, show, and go — designed for travel-day stress.",
       "home.stat1": "Years in product design",
       "home.stat2": "Products designed",
@@ -111,7 +111,7 @@
       "work.f.web": "Web App",
       "work.f.site": "Website",
       "work.g1.cat": "Digital prescription for 8,000+ pharmacies",
-      "work.g2.cat": "National health app — 1M+ users",
+      "work.g2.cat": "Cross-border health data for 221K Hajj pilgrims",
       "work.g3.cat": "International vaccine certificate flow",
       "work.g4.cat": "Health data from your wrist",
       "work.g5.cat": "Early pregnancy screening, made gentle",
@@ -225,7 +225,7 @@
     id: {
       "meta.home": "Bayu Alpiansyah — Product Designer",
       "meta.work": "Karya — Bayu Alpiansyah",
-      "meta.project": "SATUSEHAT Resep — Studi Kasus — Bayu Alpiansyah",
+      "meta.project": "Studi Kasus — Bayu Alpiansyah",
       "meta.about": "Tentang — Bayu Alpiansyah",
       "meta.contact": "Kontak — Bayu Alpiansyah",
 
@@ -283,7 +283,7 @@
       "home.pg.lead": "Sisi lain portofolioku ada di Dribbble: eksplorasi UI, konsep visual, dan beberapa karya untuk klien — ditampilkan sebagai visual murni, tanpa dokumentasi case study yang lengkap.",
       "home.pg.cta": "Jelajahi Dribbble-ku",
       "home.p1.desc": "Resep digital terstandar yang membantu 8.000+ apotek kecil di seluruh Indonesia menebus obat dengan jelas dan cepat.",
-      "home.p2.desc": "Merancang fitur utama aplikasi kesehatan nasional dengan 1 juta+ pengguna — sertifikat vaksin, integrasi smartwatch, dan skrining kehamilan.",
+      "home.p2.desc": "Portal kesehatan lintas negara yang memungkinkan dokter di Arab Saudi membaca ringkasan medis jemaah haji Indonesia dalam hitungan detik — tanpa login, tanpa aplikasi, cukup pindai kode QR.",
       "home.p3.desc": "Sertifikat vaksin internasional yang tinggal buka, tunjukkan, lalu jalan — dirancang untuk situasi penuh tekanan saat bepergian.",
       "home.stat1": "Tahun di desain produk",
       "home.stat2": "Produk dirancang",
@@ -325,7 +325,7 @@
       "work.f.web": "Aplikasi Web",
       "work.f.site": "Situs Web",
       "work.g1.cat": "Resep digital untuk 8.000+ apotek",
-      "work.g2.cat": "Aplikasi kesehatan nasional — 1 juta+ pengguna",
+      "work.g2.cat": "Data kesehatan lintas negara untuk 221K jemaah haji",
       "work.g3.cat": "Alur sertifikat vaksin internasional",
       "work.g4.cat": "Data kesehatan dari pergelangan tangan",
       "work.g5.cat": "Skrining kehamilan dini yang menenangkan",
@@ -439,7 +439,7 @@
     ja: {
       "meta.home": "Bayu Alpiansyah — プロダクトデザイナー",
       "meta.work": "作品 — Bayu Alpiansyah",
-      "meta.project": "SATUSEHAT Resep — ケーススタディ — Bayu Alpiansyah",
+      "meta.project": "ケーススタディ — Bayu Alpiansyah",
       "meta.about": "私について — Bayu Alpiansyah",
       "meta.contact": "お問い合わせ — Bayu Alpiansyah",
 
@@ -497,7 +497,7 @@
       "home.pg.lead": "ポートフォリオのもう一つの顔は Dribbble に。UI の探求、ビジュアルコンセプト、そして一部のクライアントワークを、詳細なケーススタディではなく純粋なビジュアルとして公開しています。",
       "home.pg.cta": "Dribbble を見る",
       "home.p1.desc": "インドネシア全土の8,000以上の小規模薬局が、明確かつ迅速に調剤できる標準化されたデジタル処方箋。",
-      "home.p2.desc": "100万人以上が利用する国民向け健康アプリの主要機能 — ワクチン証明書、スマートウォッチ連携、妊娠スクリーニング — をデザイン。",
+      "home.p2.desc": "サウジアラビアの医師が、インドネシア人ハッジ巡礼者の医療サマリーを数秒で確認できる国境を越えた健康ポータル — ログイン不要、アプリ不要、QRコードをスキャンするだけ。",
       "home.p3.desc": "開いて、見せて、進むだけ。旅行当日のストレスを想定して設計された国際ワクチン証明書。",
       "home.stat1": "デザイン歴（年）",
       "home.stat2": "担当プロダクト数",
@@ -539,7 +539,7 @@
       "work.f.web": "ウェブアプリ",
       "work.f.site": "ウェブサイト",
       "work.g1.cat": "8,000以上の薬局のためのデジタル処方箋",
-      "work.g2.cat": "国民向け健康アプリ — 100万人以上",
+      "work.g2.cat": "22.1万人の巡礼者のための国境を越えた健康データ",
       "work.g3.cat": "国際ワクチン証明書のフロー",
       "work.g4.cat": "手首から健康データを",
       "work.g5.cat": "やさしい妊娠初期スクリーニング",
@@ -668,7 +668,10 @@
     });
 
     const page = document.body.dataset.page;
-    if (page && dict["meta." + page]) document.title = dict["meta." + page];
+    if (page && dict["meta." + page]) {
+      const name = document.body.dataset.projectName;
+      document.title = name ? name + " — " + dict["meta." + page] : dict["meta." + page];
+    }
 
     document.querySelectorAll(".lang-menu button").forEach((b) => {
       b.classList.toggle("is-active", b.dataset.lang === lang);
