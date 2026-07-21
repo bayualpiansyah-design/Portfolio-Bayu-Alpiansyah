@@ -1,0 +1,43 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="36" height="36" fill="#EEEFF0"/>
+<g id="Header / Light Mode / Phone Interaction">
+<path d="M-783 -868C-783 -869.105 -782.105 -870 -781 -870H1584C1585.1 -870 1586 -869.105 1586 -868V122C1586 123.105 1585.1 124 1584 124H-781C-782.105 124 -783 123.105 -783 122V-868Z" fill="white"/>
+<path d="M-781 -870V-869H1584V-870V-871H-781V-870ZM1586 -868H1585V122H1586H1587V-868H1586ZM1584 124V123H-781V124V125H1584V124ZM-783 122H-782V-868H-783H-784V122H-783ZM-781 124V123C-781.552 123 -782 122.552 -782 122H-783H-784C-784 123.657 -782.657 125 -781 125V124ZM1586 122H1585C1585 122.552 1584.55 123 1584 123V124V125C1585.66 125 1587 123.657 1587 122H1586ZM1584 -870V-869C1584.55 -869 1585 -868.552 1585 -868H1586H1587C1587 -869.657 1585.66 -871 1584 -871V-870ZM-781 -870V-871C-782.657 -871 -784 -869.657 -784 -868H-783H-782C-782 -868.552 -781.552 -869 -781 -869V-870Z" fill="black" fill-opacity="0.1"/>
+<g id="Header / Light Mode / Menu Expanded / Home Selected" clip-path="url(#clip0_0_1)">
+<rect width="402" height="874" transform="translate(-287 -810)" fill="#F9FAFB"/>
+<g id="Header">
+<g id="Container">
+<g id="Nav" filter="url(#filter0_i_0_1)">
+<rect x="-287" y="-810" width="402" height="874" fill="#F3F3F4" fill-opacity="0.1"/>
+<rect x="-286.5" y="-809.5" width="401" height="873" stroke="#E4E5E7"/>
+<g id="Frame 4">
+<g id="Frame 2">
+<g id="medium" clip-path="url(#clip1_0_1)">
+<path id="Vector" d="M19.125 18C19.125 23.2728 15.0877 27.5625 10.125 27.5625C5.16234 27.5625 1.125 23.2728 1.125 18C1.125 12.7272 5.16234 8.4375 10.125 8.4375C15.0877 8.4375 19.125 12.7273 19.125 18ZM25.875 9C25.0759 9 23.5688 9.38823 22.4545 11.9884C21.7584 13.6126 21.375 15.7477 21.375 18C21.375 20.2523 21.7584 22.3874 22.4545 24.0116C23.5688 26.6118 25.0759 27 25.875 27C26.6741 27 28.1812 26.6118 29.2955 24.0116C29.9916 22.3874 30.375 20.2523 30.375 18C30.375 15.7477 29.9916 13.6126 29.2955 11.9884C28.1812 9.38823 26.6741 9 25.875 9ZM33.75 9C33.4516 9.00001 33.1655 9.11855 32.9545 9.32952C32.7435 9.5405 32.625 9.82664 32.625 10.125V25.875C32.625 26.1734 32.7435 26.4595 32.9545 26.6705C33.1655 26.8815 33.4516 27 33.75 27C34.0484 27 34.3345 26.8815 34.5455 26.6705C34.7565 26.4595 34.875 26.1734 34.875 25.875V10.125C34.875 9.82664 34.7565 9.5405 34.5455 9.32952C34.3345 9.11855 34.0484 9.00001 33.75 9Z" fill="#404147"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_0_1" x="-287" y="-810" width="402" height="876" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1.5"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.45 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_1"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="402" height="874" fill="white" transform="translate(-287 -810)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="36" height="36" fill="white"/>
+</clipPath>
+</defs>
+</svg>
