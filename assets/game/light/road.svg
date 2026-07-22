@@ -1,0 +1,37 @@
+<svg width="1232" height="136" viewBox="0 0 1232 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_130_3522)">
+<mask id="path-1-inside-1_130_3522" fill="white">
+<path d="M0 0H1232V136H0V0Z"/>
+</mask>
+<path d="M20 36H80" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M124 36H184" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M228 36H288" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M332 36H392" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M436 36H496" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M540 36H600" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M644 36H704" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M748 36H808" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M852 36H912" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M956 36H1016" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M1060 36H1120" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M1164 36H1224" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M67 73H107" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M171 73H211" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M275 73H315" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M379 73H419" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M483 73H523" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M587 73H627" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M691 73H731" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M795 73H835" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M899 73H939" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M1003 73H1043" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M1107 73H1147" stroke="#CEDDFB" stroke-width="3"/>
+<path d="M1211 73H1251" stroke="#CEDDFB" stroke-width="3"/>
+</g>
+<path d="M0 0V4H1232V0V-4H0V0Z" fill="#E9F0FF" mask="url(#path-1-inside-1_130_3522)"/>
+<defs>
+<clipPath id="clip0_130_3522">
+<path d="M0 0H1232V136H0V0Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>
