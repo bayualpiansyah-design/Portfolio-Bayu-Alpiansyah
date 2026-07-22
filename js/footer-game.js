@@ -103,8 +103,10 @@
     ];
   }
 
+  const OB_SCALE = 0.8; // obstacles drawn 20% smaller than the 56px grid so runs stay beatable
+
   function makeObstacle(type, x) {
-    return { x: x, w: type.wu * U, h: type.hu * U, img: type.key, pts: type.pts, passed: false };
+    return { x: x, w: type.wu * U * OB_SCALE, h: type.hu * U * OB_SCALE, img: type.key, pts: type.pts, passed: false };
   }
 
   function nextGap() {
