@@ -55,16 +55,13 @@
     setTimeout(() => (window.location.href = href), 550);
   });
 
-  /* ---------- Header: shadow + hide on scroll down ---------- */
+  /* ---------- Header: shadow on scroll ---------- */
   const header = document.querySelector(".site-header");
-  let lastY = window.scrollY;
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
     if (header) {
       header.classList.toggle("is-scrolled", y > 24);
-      header.classList.toggle("is-hidden", y > 320 && y > lastY);
     }
-    lastY = y;
     // Reading progress (case study)
     const bar = document.querySelector(".progress-bar");
     if (bar) {

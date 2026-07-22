@@ -285,7 +285,6 @@ em, .serif {
   z-index: 1000;
   transition: transform 0.5s var(--ease);
 }
-.site-header.is-hidden { transform: translateY(-110%); }
 .nav {
   display: flex;
   align-items: center;
