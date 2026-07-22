@@ -436,11 +436,15 @@ em, .serif {
   display: flex;
   flex-direction: column;
   clip-path: circle(0% at calc(100% - 2.5rem) 2.5rem);
-  transition: clip-path 0.7s var(--ease), background 0.4s ease;
+  transition: clip-path 0.7s var(--ease), background 0.4s ease, visibility 0s linear 0.7s;
   visibility: hidden;
   padding: 24px;
 }
-.mobile-menu.is-open { clip-path: circle(150% at calc(100% - 2.5rem) 2.5rem); visibility: visible; }
+.mobile-menu.is-open {
+  clip-path: circle(150% at calc(100% - 2.5rem) 2.5rem);
+  visibility: visible;
+  transition: clip-path 0.7s var(--ease), background 0.4s ease, visibility 0s linear 0s;
+}
 .mobile-menu-top {
   display: flex;
   align-items: center;
@@ -516,9 +520,9 @@ em, .serif {
   align-items: center;
   gap: 16px;
 }
-.mobile-social img { width: 36px; height: 36px; }
-.mobile-social a { transition: transform 0.3s var(--ease); }
-.mobile-social a:hover { transform: translateY(-3px); }
+.mobile-social svg { width: 36px; height: 36px; }
+.mobile-social a { color: var(--nav-text); transition: transform 0.3s var(--ease), color 0.3s ease; }
+.mobile-social a:hover { transform: translateY(-3px); color: var(--nav-cta); }
 
 @media (max-width: 640px) {
   .nav { justify-content: stretch; }
