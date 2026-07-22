@@ -53,6 +53,13 @@
       "footer.loc": "Jakarta, Indonesia",
       "footer.rights": "Designed & built with care in Jakarta.",
 
+      "gf.score": "Score",
+      "gf.best": "Best",
+      "gf.title": "Set your best score",
+      "gf.sub": "Share your experience, or let's discuss other ways we can collaborate",
+      "gf.press": "PRESS SPACE TO CONTINUE",
+      "gf.tap": "TAP TO CONTINUE",
+
       "home.eyebrow": "Product Designer — Jakarta, ID",
       "home.h1.l1": "<em>Simplifying complexity.</em>",
       "home.h1.l2": "Designing products that",
@@ -267,6 +274,13 @@
       "footer.loc": "Jakarta, Indonesia",
       "footer.rights": "Didesain & dibangun dengan sepenuh hati di Jakarta.",
 
+      "gf.score": "Skor",
+      "gf.best": "Terbaik",
+      "gf.title": "Cetak skor terbaikmu",
+      "gf.sub": "Bagikan pengalamanmu, atau mari diskusikan cara lain untuk berkolaborasi",
+      "gf.press": "TEKAN SPASI UNTUK MELANJUTKAN",
+      "gf.tap": "KETUK UNTUK MELANJUTKAN",
+
       "home.eyebrow": "Product Designer — Jakarta, ID",
       "home.h1.l1": "<em>Menyederhanakan kompleksitas.</em>",
       "home.h1.l2": "Merancang produk yang menciptakan",
@@ -480,6 +494,13 @@
       "footer.contactl": "連絡先",
       "footer.loc": "インドネシア・ジャカルタ",
       "footer.rights": "ジャカルタより、心を込めてデザイン。",
+
+      "gf.score": "スコア",
+      "gf.best": "ベスト",
+      "gf.title": "ベストスコアに挑戦",
+      "gf.sub": "感想をシェアするか、他のコラボの形について話しましょう",
+      "gf.press": "スペースキーでスタート",
+      "gf.tap": "タップでスタート",
 
       "home.eyebrow": "プロダクトデザイナー — ジャカルタ",
       "home.h1.l1": "<em>複雑さをシンプルに。</em>",
