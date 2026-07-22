@@ -7,6 +7,17 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
+  /* ---------- Smooth scroll (Lenis) — Framer-style scroll lag ---------- */
+  let lenis = null;
+  if (!reduceMotion && window.Lenis) {
+    lenis = new window.Lenis({ lerp: 0.2 });
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+  }
+
   /* ---------- Page load & transitions ---------- */
   const transition = document.querySelector(".page-transition");
 
@@ -71,6 +82,7 @@
       toggle.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open);
       document.body.style.overflow = open ? "hidden" : "";
+      if (lenis) (open ? lenis.stop() : lenis.start());
     };
     toggle.addEventListener("click", () =>
       setMenu(!mobileMenu.classList.contains("is-open"))
@@ -81,6 +93,25 @@
       a.addEventListener("click", () => setMenu(false))
     );
   }
+
+  /* ---------- Smooth in-page scrolling: back-to-top + anchor links (TOC) ---------- */
+  document.addEventListener("click", (e) => {
+    const toTop = e.target.closest(".to-top");
+    if (toTop) {
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+      else window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      return;
+    }
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const id = anchor.getAttribute("href").slice(1);
+    const target = id && document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(target, { duration: 1.2, offset: -20 });
+    else target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
 
   /* ---------- Reveal on scroll ---------- */
   const revealables = document.querySelectorAll(".reveal, .line");
@@ -454,6 +485,7 @@
       lightboxFrame.style.top = targetTop + "px";
 
       document.body.style.overflow = "hidden";
+      if (lenis) lenis.stop();
       lightbox.setAttribute("aria-hidden", "false");
 
       if (reduceMotion) {
@@ -489,6 +521,7 @@
     function closeLightbox() {
       if (!lightbox || !lightbox.classList.contains("is-open")) return;
       document.body.style.overflow = "";
+      if (lenis) lenis.start();
       lightbox.setAttribute("aria-hidden", "true");
 
       if (scale !== 1 || tx !== 0 || ty !== 0) {
