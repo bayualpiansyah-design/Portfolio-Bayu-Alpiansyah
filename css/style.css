@@ -1559,7 +1559,15 @@ a:hover .ui-stack .ui-tile:nth-child(3) { transform: rotate(5deg) translateY(-6p
 }
 .game-footer {
   margin-top: var(--section);
-  padding: 0 24px 24px;
+  padding: 0 24px 16px;
+}
+.site-copyright {
+  padding: 0 24px 16px;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--ink-3);
 }
 .gf-card {
   position: relative;
@@ -1613,7 +1621,7 @@ a:hover .ui-stack .ui-tile:nth-child(3) { transform: rotate(5deg) translateY(-6p
 .gf-clock {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--gf-text);
@@ -1657,7 +1665,7 @@ a:hover .ui-stack .ui-tile:nth-child(3) { transform: rotate(5deg) translateY(-6p
 }
 .gf-scores {
   position: absolute;
-  top: 0;
+  top: 24px;
   right: 42px;
   z-index: 1;
   display: flex;
@@ -1728,13 +1736,12 @@ a:hover .ui-stack .ui-tile:nth-child(3) { transform: rotate(5deg) translateY(-6p
 
 @media (max-width: 640px) {
   .game-footer { padding: 0 16px 16px; }
-  .gf-card { height: 500px; border-radius: 20px; }
-  .gf-top { flex-direction: column; gap: 20px; padding: 20px; }
+  .gf-card { height: 512px; border-radius: 20px; }
+  .gf-top { flex-direction: column; gap: 32px; padding: 20px; }
   .gf-time { text-align: left; }
   .gf-loc { justify-content: flex-start; }
   .gf-nav { gap: 14px; margin-top: 16px; }
   .gf-nav a { font-size: 18px; }
-  .gf-clock { font-size: 24px; }
   .gf-scores { right: 20px; }
   .gf-scores > div { width: 92px; font-size: 13px; }
   .gf-ov-title { font-size: 24px; }
