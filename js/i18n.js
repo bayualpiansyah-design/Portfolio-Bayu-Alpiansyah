@@ -52,6 +52,7 @@
       "footer.contactl": "Contact",
       "footer.loc": "Jakarta, Indonesia",
       "footer.rights": "Designed & built with care in Jakarta.",
+      "footer.copyright": "Copyright © Bayu Alpiansyah, 2026",
 
       "gf.score": "Score",
       "gf.best": "Best",
@@ -273,6 +274,7 @@
       "footer.contactl": "Kontak",
       "footer.loc": "Jakarta, Indonesia",
       "footer.rights": "Didesain & dibangun dengan sepenuh hati di Jakarta.",
+      "footer.copyright": "Hak Cipta © Bayu Alpiansyah, 2026",
 
       "gf.score": "Skor",
       "gf.best": "Terbaik",
@@ -494,6 +496,7 @@
       "footer.contactl": "連絡先",
       "footer.loc": "インドネシア・ジャカルタ",
       "footer.rights": "ジャカルタより、心を込めてデザイン。",
+      "footer.copyright": "© Bayu Alpiansyah, 2026",
 
       "gf.score": "スコア",
       "gf.best": "ベスト",
